@@ -7,3 +7,28 @@ describe('A basic operation', function () {
     assert.strictEqual(1 + 1, 2);
   });
 });
+
+describe('All node integrations', function () {
+  it('exist as expected', function () {
+    assert(require);
+    assert(module);
+    assert(__filename);
+    assert(__dirname);
+    assert(process);
+    assert(setImmediate);
+    assert(clearImmediate);
+    assert.strictEqual(global, window);
+  });
+});
+
+describe('setImmediate', function () {
+  it('runs before `setTimeout`', function () {
+    // TODO: Complete me
+  });
+});
+
+describe('clearImmediate', function () {
+  it('clears an existing `setImmediate`', function () {
+    // TODO: Complete me
+  });
+});
