@@ -33,6 +33,7 @@
     "foundry-release-npm": "~2.0.2",
     "jscs": "~1.7.3",
     "jshint": "~2.5.10",
+    "karma": "~0.13.21",
     "mocha": "~1.11.0",
     "twolfson-style": "~1.6.0"
   },
