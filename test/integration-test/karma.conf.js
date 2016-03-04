@@ -12,7 +12,7 @@ module.exports = function (config) {
     // list of files / patterns to load in the browser
     files: [
       __dirname + '/../../lib/node-integration-iframe.js',
-      'test.js'
+      '*-test.js'
     ],
 
     // list of files to exclude

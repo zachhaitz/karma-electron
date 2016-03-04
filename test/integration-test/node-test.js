@@ -2,16 +2,13 @@
 var assert = require('assert');
 
 // Start our tests
-describe('A basic operation', function () {
-  it('asserts without errors', function () {
-    assert.strictEqual(1 + 1, 2);
-  });
-});
-
 describe('All node integrations', function () {
   it('exist as expected', function () {
     assert(require);
     assert(module);
+    // TODO: `__filename` not working isn't so great...
+    //   We should revisit this...
+    console.log(__filename);
     assert(__filename);
     assert(__dirname);
     assert(process);
