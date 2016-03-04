@@ -23,13 +23,17 @@
   "scripts": {
     "precheck": "twolfson-style precheck lib/ test/",
     "lint": "twolfson-style lint lib/ test/",
-    "test-karma-single-run": "karma start test/integration-test/karma.conf.js --single-run",
+    "test": "npm run test-karma-single-run-all && npm run lint",
     "test-karma-continuous": "karma start test/integration-test/karma.conf.js --no-single-run",
-    "test": "npm run test-karma-single-run && npm run lint",
-    "test-windows": "npm run test-karma-single-run"
+    "test-karma-failure": "! cross-env TEST_TYPE=FAILURE npm run test-karma-single-run",
+    "test-karma-single-run": "karma start test/integration-test/karma.conf.js --single-run",
+    "test-karma-single-run-all": "npm run test-karma-single-run && npm run test-karma-failure && npm run test-karma-uncaught-exception",
+    "test-karma-uncaught-exception": "! cross-env TEST_TYPE=UNCAUGHT_EXCEPTION npm run test-karma-single-run",
+    "test-windows": "npm run test-karma-single-run-all"
   },
   "dependencies": {},
   "devDependencies": {
+    "cross-env": "~1.0.7",
     "electron-prebuilt": "~0.36.9",
     "foundry": "~4.0.3",
     "foundry-release-git": "~2.0.2",
