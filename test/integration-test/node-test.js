@@ -8,6 +8,7 @@ describe('All node integrations', function () {
     assert(module);
     // TODO: `__filename` not working isn't so great...
     //   We should revisit this...
+    console.log(__filename);
     assert(__filename);
     assert(__dirname);
     assert(process);
