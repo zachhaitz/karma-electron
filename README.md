@@ -2,9 +2,8 @@
 
 TODO: Document
 
-- ELECTRON_BIN
 - `--show` flag
-- `appDataDir` argument
+- `userDataDir` argument
 - `flags` argument
 
 [Karma][] launcher for [Electron][]
@@ -54,7 +53,12 @@ karma start
 > Alternative solutions/discussions are welcome via issues/PRs.
 
 ## Documentation
-_(Coming soon)_
+### Environment variables
+- ELECTRON_BIN - Override path to use for `electron`
+    - By default, we will use path given by `electron-prebuilt`
+
+### Configuration
+
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint via `npm run lint` and test via `npm test`.
