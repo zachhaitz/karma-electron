@@ -37,7 +37,7 @@ describe('clearImmediate', function () {
   it('clears an existing `setImmediate`', function (done) {
     // Set up a setImmediate
     var setImmediateRan = false;
-    var setImmediateTimer = setImmediate(function handleSetImmediate () {
+    var setImmediateId = setImmediate(function handleSetImmediate () {
       setImmediateRan = true;
     });
 
@@ -48,6 +48,6 @@ describe('clearImmediate', function () {
     }, 100);
 
     // Clear our setImmediate
-    clearImmediate(setImmediateTimer);
+    clearImmediate(setImmediateId);
   });
 });
