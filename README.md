@@ -1,5 +1,7 @@
 # karma-electron-launcher [![Build status](https://travis-ci.org/twolfson/karma-electron-launcher.svg?branch=master)](https://travis-ci.org/twolfson/karma-electron-launcher)
 
+TODO: Review TODOs
+
 [Karma][] launcher for [Electron][]
 
 This was written to allow for directly testing in [Electron][] where we might want `require` to work automatically
