@@ -3,7 +3,6 @@
 TODO: Document
 
 - ELECTRON_BIN
-- Peer installation
 - `--show` flag
 - `appDataDir` argument
 - `flags` argument
@@ -23,17 +22,36 @@ This was written to allow for directly testing in [Electron][] where we might wa
 - Support for isolated test runs to prevent cookie/localStorage pollution
 
 ## Getting Started
-Install the module with: `npm install karma-electron-launcher`
+On a project that has been set up with `karma init` already, install the module via:
 
-```js
-var karmaElectronLauncher = require('karma-electron-launcher');
-karmaElectronLauncher(); // 'awesome'
+```bash
+# Install our module and `electron-prebuilt`
+npm install karma-electron-launcher electron-prebuilt
 ```
 
-## Documentation
-_(Coming soon)_
+Then, configure the module:
 
-## Examples
+```js
+// Inside `karma.conf.js`
+browsers: ['Electron']
+
+// If you would like Node integration support (e.g. `require`)
+//   then, you must include this as the first file in `files`:
+files: [
+    require.resolve('karma-electron-launcher/lib/node-integration-iframe.js'),
+    // Tests go here (e.g. 'test/*.js')
+]
+```
+
+Then, we can run Karma:
+
+```bash
+karma start
+```
+
+> The `require.resolve` in `files` is necessary due to Karma using an `iframe` and Electron's `nodeIntegration` only applying to the top level window. This file implements the missing `nodeIntegration` capabilities.
+
+## Documentation
 _(Coming soon)_
 
 ## Contributing
