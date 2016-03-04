@@ -1,6 +1,19 @@
 // Karma configuration
 // Generated on Thu Mar 03 2016 19:57:50 GMT-0600 (CST)
 module.exports = function (config) {
+  // Set up default files to test against
+  var preloadScript = __dirname + '/../../lib/node-integration-iframe.js';
+  var uncaughtExceptionTest = 'uncaught-exception-test.js';
+  var testFiles = [preloadScript, '*-test.js'];
+  var excludeFiles = [uncaughtExceptionTest];
+
+  // If we are testing uncaught exceptions, then update our tests
+  if (process.env.TEST_TYPE === 'UNCAUGHT_EXCEPTION') {
+    testFiles = [preloadScript, uncaughtExceptionTest];
+    excludeFiles = [];
+  }
+
+  // Define our config
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -10,14 +23,10 @@ module.exports = function (config) {
     frameworks: ['mocha'],
 
     // list of files / patterns to load in the browser
-    files: [
-      __dirname + '/../../lib/node-integration-iframe.js',
-      '*-test.js'
-    ],
+    files: testFiles,
 
     // list of files to exclude
-    exclude: [
-    ],
+    exclude: excludeFiles,
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
