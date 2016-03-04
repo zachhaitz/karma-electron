@@ -20,10 +20,5 @@ before_script:
   # Wait for Xvfb to start
   - sleep 3
 
-script:
-  # DEV: Debugging Travis CI, pretty sure we need an Xvfb
-  # TODO: Remove this debug logic
-  - time ./node_modules/.bin/electron lib/electron-launcher.js --url=http://google.com/
-
 notifications:
   email: false
