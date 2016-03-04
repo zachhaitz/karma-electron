@@ -15,6 +15,13 @@ This was written to allow for directly testing in [Electron][] where we might wa
 [Karma]: https://github.com/karma-runner/karma
 [Electron]: https://github.com/atom/electron
 
+**Features:**
+
+- Tested via CI on Linux and Windows
+- Support for Node.js integration in the renderer process (e.g. `process`, `require`, `__filename`)
+- Support for hidden browser windows
+- Support for isolated test runs to prevent cookie/localStorage pollution
+
 ## Getting Started
 Install the module with: `npm install karma-electron-launcher`
 
