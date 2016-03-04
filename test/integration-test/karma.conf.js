@@ -52,6 +52,13 @@ module.exports = function (config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    // Load in our module as a plugin
+    // https://github.com/karma-runner/karma-chrome-launcher/blob/v0.2.2/examples/simple/karma.conf.js
+    plugins: [
+        require('../../'),
+        'karma-mocha'
+    ]
   });
 };
