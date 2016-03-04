@@ -58,7 +58,16 @@ karma start
     - By default, we will use path given by `electron-prebuilt`
 
 ### Configuration
+We support configuration via Karma's custom launcher inheritance:
 
+**Example:**
+
+```
+module.exports = function(config) {
+  config.set({
+    // Load our base
+    browsers: ['Electron'],
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint via `npm run lint` and test via `npm test`.
