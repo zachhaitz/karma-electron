@@ -51,6 +51,12 @@ karma start
 - ELECTRON_BIN - Override path to use for `electron`
     - By default, we will use path given by `electron-prebuilt`
 
+**Example:**
+
+```bash
+ELECTRON_BIN=/usr/bin/electron karma start
+```
+
 ### Configuration
 We support configuration via Karma's custom launcher inheritance:
 
@@ -62,7 +68,7 @@ We support configuration via Karma's custom launcher inheritance:
 
 **Example:**
 
-```
+```js
 module.exports = function (config) {
   config.set({
     // Specify usage of our custom launcher
