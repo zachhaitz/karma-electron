@@ -21,4 +21,8 @@ before_script:
   - sleep 3
 
 notifications:
-  email: false
+  email:
+    recipients:
+      - todd@twolfson.com
+    on_success: change
+    on_failure: change

@@ -2,8 +2,6 @@
 
 TODO: Review TODOs
 
-TODO: Update `.travis.yml` to alert on change
-
 [Karma][] launcher for [Electron][]
 
 This was written to allow for directly testing in [Electron][] where we might want `require` to work automatically
