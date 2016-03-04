@@ -6,11 +6,16 @@ describe('All node integrations', function () {
   it('exist as expected', function () {
     assert(require);
     assert(module);
-    // TODO: `__filename` not working isn't so great...
-    //   We should revisit this...
-    console.log(__filename);
-    assert(__filename);
-    assert(__dirname);
+    // Example: /home/todd/github/karma-electron-launcher/test/integration-test/node-test.js
+    assert(/test\/integration-test\/node-test\.js$/.test(__filename),
+      'Expected "' + __filename + '" to end with "test/integration-test/node-test.js"');
+    assert.strictEqual(/^\/base\//.test(__filename), false,
+      'Expected "' + __filename + '" to not start with "base"');
+    // Example: /home/todd/github/karma-electron-launcher/test/integration-test
+    assert(/test\/integration-test$/.test(__dirname),
+      'Expected "' + __dirname + '" to end with "test/integration-test"');
+    assert.strictEqual(/^\/base\//.test(__dirname), false,
+      'Expected "' + __dirname + '" to not start with "base"');
     assert(process);
     assert(setImmediate);
     assert(clearImmediate);
