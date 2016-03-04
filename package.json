@@ -31,7 +31,9 @@
     "test-karma-uncaught-exception": "node bin/verify-failure.js TEST_TYPE=UNCAUGHT_EXCEPTION karma start test/integration-test/karma.conf.js --single-run",
     "test-windows": "npm run test-karma-single-run-all"
   },
-  "dependencies": {},
+  "dependencies": {
+    "commander": "~2.9.0"
+  },
   "devDependencies": {
     "cross-env": "~1.0.7",
     "electron-prebuilt": "~0.36.9",
