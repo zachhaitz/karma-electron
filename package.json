@@ -24,7 +24,8 @@
     "precheck": "twolfson-style precheck lib/ test/",
     "lint": "twolfson-style lint lib/ test/",
     "pretest": "twolfson-style install",
-    "test": "npm run precheck && mocha --reporter dot && npm run lint"
+    "test-karma-single-run": "cd test/integration-test && karma start --single-run",
+    "test": "npm run precheck && npm run test-karma-single-run && npm run lint"
   },
   "dependencies": {},
   "devDependencies": {
