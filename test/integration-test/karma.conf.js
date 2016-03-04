@@ -3,18 +3,22 @@
 module.exports = function (config) {
   // Set up default files to test against
   var preloadScript = __dirname + '/../../lib/node-integration-iframe.js';
+  var karmaTest = 'karma-test.js';
   var failureTest = 'failure-test.js';
   var uncaughtExceptionTest = 'uncaught-exception-test.js';
   var testFiles = [preloadScript, '*-test.js'];
-  var excludeFiles = [failureTest, uncaughtExceptionTest];
+  var excludeFiles = [failureTest, karmaTest, uncaughtExceptionTest];
 
   // If we are testing uncaught exceptions, then update our tests
   if (process.env.TEST_TYPE === 'UNCAUGHT_EXCEPTION') {
     testFiles = [preloadScript, uncaughtExceptionTest];
-    excludeFiles = [failureTest];
+    excludeFiles = [failureTest, karmaTest];
   } else if (process.env.TEST_TYPE === 'FAILURE') {
     testFiles = [preloadScript, failureTest];
-    excludeFiles = [uncaughtExceptionTest];
+    excludeFiles = [karmaTest, uncaughtExceptionTest];
+  } else if (process.env.TEST_TYPE === 'KARMA') {
+    testFiles = [preloadScript, karmaTest];
+    excludeFiles = [failureTest, uncaughtExceptionTest];
   }
 
   // Define our config
