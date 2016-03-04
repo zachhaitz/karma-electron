@@ -10,19 +10,11 @@ module.exports = function (config) {
 
   // If we are testing uncaught exceptions, then update our tests
   if (process.env.TEST_TYPE === 'UNCAUGHT_EXCEPTION') {
-    testFiles = testFiles.map(function replaceTestGlob (file) {
-      return file === '*-test.js' ? uncaughtExceptionTest : file;
-    });
-    excludeFiles = excludeFiles.filter(function removeUncaughtExceptionTest (file) {
-      return file === uncaughtExceptionTest;
-    });
+    testFiles = [preloadScript, uncaughtExceptionTest];
+    excludeFiles = [failureTest];
   } else if (process.env.TEST_TYPE === 'FAILURE') {
-    testFiles = testFiles.map(function replaceTestGlob (file) {
-      return file === '*-test.js' ? failureTest : file;
-    });
-    excludeFiles = excludeFiles.filter(function removeFailureTest (file) {
-      return file === failureTest;
-    });
+    testFiles = [preloadScript, failureTest];
+    excludeFiles = [uncaughtExceptionTest];
   }
 
   // Define our config
