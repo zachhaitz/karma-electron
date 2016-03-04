@@ -53,10 +53,6 @@ module.exports = function (config) {
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    client: {
-        useIframe: false
-    },
-
     // Load in our module as a plugin
     // https://github.com/karma-runner/karma-chrome-launcher/blob/v0.2.2/examples/simple/karma.conf.js
     plugins: [
