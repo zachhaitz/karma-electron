@@ -12,5 +12,10 @@ matrix:
 before_install:
   - curl --location http://rawgit.com/twolfson/fix-travis-ci/master/lib/install.sh | bash -s
 
+script:
+  # DEV: Debugging Travis CI, pretty sure we need an Xvfb
+  # TODO: Remove this debug logic
+  - time ./node_modules/.bin/electron lib/electron-launcher.js --url=http://google.com/
+
 notifications:
   email: false
