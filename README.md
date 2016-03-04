@@ -1,7 +1,5 @@
 # karma-electron-launcher [![Build status](https://travis-ci.org/twolfson/karma-electron-launcher.svg?branch=master)](https://travis-ci.org/twolfson/karma-electron-launcher) [![Build status](https://ci.appveyor.com/api/projects/status/urgpvcip7kl9q2ih?svg=true)](https://ci.appveyor.com/project/twolfson/karma-electron-launcher)
 
-TODO: Review TODOs
-
 TODO: Document
 
 - ELECTRON_BIN
