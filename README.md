@@ -50,6 +50,7 @@ karma start
 ```
 
 > The `require.resolve` in `files` is necessary due to Karma using an `iframe` and Electron's `nodeIntegration` only applying to the top level window. This file implements the missing `nodeIntegration` capabilities.
+>
 > Alternative solutions/discussions are welcome via issues/PRs.
 
 ## Documentation
