@@ -1,8 +1,8 @@
 {
-  "name": "karma-electron-launcher",
+  "name": "karma-electron-launcher2",
   "description": "Karma launcher for Electron",
   "version": "1.0.0",
-  "homepage": "https://github.com/twolfson/karma-electron-launcher",
+  "homepage": "https://github.com/twolfson/karma-electron-launcher2",
   "author": {
     "name": "Todd Wolfson",
     "email": "todd@twolfson.com",
@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/twolfson/karma-electron-launcher.git"
+    "url": "git://github.com/twolfson/karma-electron-launcher2.git"
   },
   "bugs": {
-    "url": "https://github.com/twolfson/karma-electron-launcher/issues"
+    "url": "https://github.com/twolfson/karma-electron-launcher2/issues"
   },
   "main": "lib/karma-electron-launcher",
   "engines": {

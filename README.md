@@ -1,4 +1,4 @@
-# karma-electron-launcher [![Build status](https://travis-ci.org/twolfson/karma-electron-launcher.svg?branch=master)](https://travis-ci.org/twolfson/karma-electron-launcher) [![Build status](https://ci.appveyor.com/api/projects/status/urgpvcip7kl9q2ih?svg=true)](https://ci.appveyor.com/project/twolfson/karma-electron-launcher)
+# karma-electron-launcher2 [![Build status](https://travis-ci.org/twolfson/karma-electron-launcher2.svg?branch=master)](https://travis-ci.org/twolfson/karma-electron-launcher2) [![Build status](https://ci.appveyor.com/api/projects/status/urgpvcip7kl9q2ih?svg=true)](https://ci.appveyor.com/project/twolfson/karma-electron-launcher2)
 
 [Karma][] launcher for [Electron][]
 
@@ -19,7 +19,7 @@ On a project that has been set up with `karma init` already, install the module 
 
 ```bash
 # Install our module and `electron-prebuilt`
-npm install karma-electron-launcher electron-prebuilt
+npm install karma-electron-launcher2 electron-prebuilt
 ```
 
 Then, configure the module:
@@ -31,7 +31,7 @@ browsers: ['Electron']
 // If you would like Node integration support (e.g. `require`)
 //   then, you must include this as the first file in `files`:
 files: [
-    require.resolve('karma-electron-launcher/lib/node-integration-iframe.js'),
+    require.resolve('karma-electron-launcher2/lib/node-integration-iframe.js'),
     // Tests go here (e.g. 'test/*.js')
 ]
 ```
