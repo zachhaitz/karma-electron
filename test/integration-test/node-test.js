@@ -18,13 +18,36 @@ describe('All node integrations', function () {
 });
 
 describe('setImmediate', function () {
-  it('runs before `setTimeout`', function () {
-    // TODO: Complete me
+  it('runs before `setTimeout`', function (done) {
+    // Set up a setImmediate
+    var setImmediateRan = false;
+    setImmediate(function handleSetImmediate () {
+      setImmediateRan = true;
+    });
+
+    // Set up a setTimeout to assert and callback
+    setTimeout(function handleSetTimeout () {
+      assert.strictEqual(setImmediateRan, true);
+      done();
+    }, 100);
   });
 });
 
 describe('clearImmediate', function () {
-  it('clears an existing `setImmediate`', function () {
-    // TODO: Complete me
+  it('clears an existing `setImmediate`', function (done) {
+    // Set up a setImmediate
+    var setImmediateRan = false;
+    var setImmediateTimer = setImmediate(function handleSetImmediate () {
+      setImmediateRan = true;
+    });
+
+    // Set up a setTimeout to assert and callback
+    setTimeout(function handleSetTimeout () {
+      assert.strictEqual(setImmediateRan, false);
+      done();
+    }, 100);
+
+    // Clear our setImmediate
+    clearImmediate(setImmediateTimer);
   });
 });
