@@ -4,6 +4,9 @@ module.exports = function (config) {
   // Set up default files to test against
   // TODO: An alternative to `preloadScript` on the user end might be via dependency injection
   //   See `config.files`/`files` in https://github.com/karma-runner/karma-mocha/blob/v0.2.2/lib/index.js
+  // TODO: Another alternative might be a preprocessor since it seems like we can get `originalFile`
+  //   which saves us sanity
+  //   https://github.com/MSakamaki/karma-electronrequire-preprocessor/blob/75791b9bffbfa966bb66c8b15868713126956117/index.js
   var preloadScript = __dirname + '/../../lib/node-integration-iframe.js';
   var karmaTest = 'karma-test.js';
   var failureTest = 'failure-test.js';
