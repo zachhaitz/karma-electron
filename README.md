@@ -2,6 +2,14 @@
 
 TODO: Review TODOs
 
+TODO: Document
+
+- ELECTRON_BIN
+- Peer installation
+- `--show` flag
+- `appDataDir` argument
+- `flags` argument
+
 [Karma][] launcher for [Electron][]
 
 This was written to allow for directly testing in [Electron][] where we might want `require` to work automatically
