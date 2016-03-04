@@ -23,13 +23,15 @@
   "scripts": {
     "precheck": "twolfson-style precheck lib/ test/",
     "lint": "twolfson-style lint lib/ test/",
-    "test": "npm run test-karma-single-run-all && npm run lint",
+    "test": "npm run test-karma-all && npm run lint",
+    "test-karma-all": "npm run test-karma-single-run && npm run test-karma-failure && npm run test-karma-uncaught-exception && npm run test-karma-karma",
     "test-karma-continuous": "karma start test/integration-test/karma.conf.js --no-single-run",
+    "test-karma-karma-comment": "# DEV: We run `test-karma-karma` twice to verify no user-data-dir is leaking",
+    "test-karma-karma": "cross-env TEST_TYPE=KARMA karma start test/integration-test/karma.conf.js --single-run &&  TEST_TYPE=KARMA karma start test/integration-test/karma.conf.js --single-run",
     "test-karma-failure": "node bin/verify-failure.js TEST_TYPE=FAILURE karma start test/integration-test/karma.conf.js --single-run",
     "test-karma-single-run": "karma start test/integration-test/karma.conf.js --single-run",
-    "test-karma-single-run-all": "npm run test-karma-single-run && npm run test-karma-failure && npm run test-karma-uncaught-exception",
     "test-karma-uncaught-exception": "node bin/verify-failure.js TEST_TYPE=UNCAUGHT_EXCEPTION karma start test/integration-test/karma.conf.js --single-run",
-    "test-windows": "npm run test-karma-single-run-all"
+    "test-windows": "npm run test-karma-all"
   },
   "dependencies": {
     "commander": "~2.9.0"

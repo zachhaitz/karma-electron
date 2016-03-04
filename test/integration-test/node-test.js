@@ -1,10 +1,6 @@
 // Load in our dependencies
 var assert = require('assert');
 
-localStorage.foo = 'bar';
-console.log(localStorage);
-localStorage.hello = 'world';
-
 // Start our tests
 describe('All node integrations', function () {
   it('exist as expected', function () {
