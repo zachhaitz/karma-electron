@@ -43,8 +43,7 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    // TODO: When we update this, remove `karma-chrome-launcher` from `package.json`
-    browsers: ['Chrome'],
+    browsers: ['Electron'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
