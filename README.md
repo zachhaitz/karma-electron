@@ -1,6 +1,11 @@
 # karma-electron-launcher [![Build status](https://travis-ci.org/twolfson/karma-electron-launcher.svg?branch=master)](https://travis-ci.org/twolfson/karma-electron-launcher)
 
-Karma launcher for Electron
+[Karma][] launcher for [Electron][]
+
+This was written to allow for directly testing in [Electron][] where we might want `require` to work automatically
+
+[Karma]: https://github.com/karma-runner/karma
+[Electron]: https://github.com/atom/electron
 
 ## Getting Started
 Install the module with: `npm install karma-electron-launcher`
