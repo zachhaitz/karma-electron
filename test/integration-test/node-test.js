@@ -1,5 +1,6 @@
 // Load in our dependencies
 var assert = require('assert');
+var submodule = require('./submodule');
 
 // Start our tests
 describe('All node integrations', function () {
@@ -20,6 +21,32 @@ describe('All node integrations', function () {
     assert(setImmediate);
     assert(clearImmediate);
     assert.strictEqual(global, window);
+  });
+});
+
+describe('module', function () {
+  describe('in the top level', function () {
+    // DEV: Determined exepctations via https://gist.github.com/twolfson/c6213aa59f7c3f6477a7
+    it('identify as the page itself', function () {
+      // browser1: module.filename /home/todd/github/gist-electron-node-integration-explore/index.html
+      // browser1.js:3 browser1: module.exports Object
+      // browser1.js:4 browser1: module.id .
+      // browser1.js:5 browser1: module.loaded true
+      // browser1.js:6 browser1: module.parent null
+      assert.strictEqual(module.parent, null);
+    });
+  });
+
+  describe('in a child module', function () {
+    // DEV: Determined exepctations via https://gist.github.com/twolfson/c6213aa59f7c3f6477a7
+    it('identify as a standalone module', function () {
+      // browser2: module.filename /home/todd/github/gist-electron-node-integration-explore/browser2.js
+      // /home/todd/github/gist-electron-node-integration-explore/browser2.js:3 browser2: module.exports Object
+      // /home/todd/github/gist-electron-node-integration-explore/browser2.js:4 browser2: module.id /home/todd/github/gist-electron-node-integration-explore/browser2.js
+      // /home/todd/github/gist-electron-node-integration-explore/browser2.js:5 browser2: module.loaded false
+      // /home/todd/github/gist-electron-node-integration-explore/browser2.js:6 browser2: module.parent Module
+      assert.strictEqual(submodule.parent, module);
+    });
   });
 });
 
