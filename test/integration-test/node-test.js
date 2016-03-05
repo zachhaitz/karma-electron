@@ -45,10 +45,10 @@ describe('module', function () {
   describe('in a child module', function () {
     // DEV: Determined exepctations via https://gist.github.com/twolfson/c6213aa59f7c3f6477a7
     it('identify as a standalone module', function () {
-      assert(/test\/integration-test\/submodule\.js$/.test(submodule.filename),
+      assert(/test[\/\\]integration-test[\/\\]submodule\.js$/.test(submodule.filename),
         'Expected "' + submodule.filename + '" to end with "test/integration-test/submodule.js"');
       assert.strictEqual(submodule.exports.hello, 'world');
-      assert(/test\/integration-test\/submodule\.js$/.test(submodule.id),
+      assert(/test[\/\\]integration-test[\/\\]submodule\.js$/.test(submodule.id),
         'Expected "' + submodule.id + '" to end with "test/integration-test/submodule.js"');
       assert.strictEqual(submodule.loaded, true);
       assert.strictEqual(submodule.parent, module);
