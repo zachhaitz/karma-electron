@@ -1,6 +1,6 @@
 # karma-electron-launcher2 [![Build status](https://travis-ci.org/twolfson/karma-electron-launcher2.svg?branch=master)](https://travis-ci.org/twolfson/karma-electron-launcher2) [![Build status](https://ci.appveyor.com/api/projects/status/urgpvcip7kl9q2ih/branch/master?svg=true)](https://ci.appveyor.com/project/twolfson/karma-electron-launcher/branch/master)
 
-[Karma][] launcher for [Electron][]
+[Karma][] launcher and framework for [Electron][]
 
 This was written to allow for directly testing in [Electron][] where we might want `require` to work automatically
 
@@ -29,10 +29,10 @@ Then, configure the module:
 browsers: ['Electron']
 
 // If you would like Node integration support (e.g. `require`)
-//   then, you must include this as the first file in `files`:
-files: [
-    require.resolve('karma-electron-launcher2/lib/node-integration-iframe.js'),
-    // Tests go here (e.g. 'test/*.js')
+//   then, you must include this in `frameworks`
+frameworks: [
+    'electron'
+    // Other frameworks go here (e.g. `mocha`)
 ]
 ```
 
@@ -41,10 +41,6 @@ Then, we can run Karma:
 ```bash
 karma start
 ```
-
-> The `require.resolve` in `files` is necessary due to Karma using an `iframe` and Electron's `nodeIntegration` only applying to the top level window. This file implements the missing `nodeIntegration` capabilities.
->
-> Alternative solutions/discussions are welcome via issues/PRs. We believe it might be possible via Karma's dependency injection (e.g. `config.files`).
 
 ## Documentation
 ### Environment variables
