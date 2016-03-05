@@ -1,6 +1,5 @@
 // Load in our dependencies
 var assert = require('assert');
-// TODO: Fix support for loading `./submodule`
 // DEV: By using a `./` require here, we have verified that we support relative requires
 var submodule = require('./submodule');
 
