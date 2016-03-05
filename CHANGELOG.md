@@ -1,2 +1,4 @@
 # karma-electron-launcher2 changelog
+1.1.0 - Added support for relative `require` and verified support for `module` properties
+
 1.0.0 - Initial release
