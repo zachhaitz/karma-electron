@@ -29,8 +29,12 @@ describe('module', function () {
   describe('in the top level', function () {
     // DEV: Determined exepctations via https://gist.github.com/twolfson/c6213aa59f7c3f6477a7
     it('identify as the page itself', function () {
-      // TODO: Remedy this...
-      // assert.strictEqual(module.filename, 'wat');
+      // jscs:disable maximumLineLength
+      // DEV: `module.filename` should be something like
+      //   /home/todd/github/karma-electron-launcher2/node_modules/electron-prebuilt/dist/resources/atom.asar/renderer/lib/init.js
+      //   since the page is HTTP, not a `file://`
+      // jscs:enable maximumLineLength
+      assert(module.filename);
       assert.strictEqual(typeof module.exports, 'object');
       assert.strictEqual(module.id, '.');
       assert.strictEqual(submodule.loaded, true);
