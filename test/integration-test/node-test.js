@@ -1,6 +1,7 @@
 // Load in our dependencies
 var assert = require('assert');
-var submodule = require('./submodule');
+// TODO: Fix support for loading `./submodule`
+var submodule = require('/home/todd/github/karma-electron-launcher2/test/integration-test/submodule');
 
 // Start our tests
 describe('All node integrations', function () {
