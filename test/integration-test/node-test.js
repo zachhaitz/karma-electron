@@ -1,7 +1,8 @@
 // Load in our dependencies
 var assert = require('assert');
 // TODO: Fix support for loading `./submodule`
-var submodule = require('/home/todd/github/karma-electron-launcher2/test/integration-test/submodule');
+// DEV: By using a `./` require here, we have verified that we support relative requires
+var submodule = require('./submodule');
 
 // Start our tests
 describe('All node integrations', function () {
