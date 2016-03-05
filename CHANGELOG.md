@@ -1,4 +1,4 @@
-# karma-electron-launcher2 changelog
+# karma-electron changelog
 2.0.1 - Repaired Appveyor failures
 
 2.0.0 - Moved `files` hack to a framework implementation

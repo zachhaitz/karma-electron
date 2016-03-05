@@ -8,12 +8,12 @@ describe('All node integrations', function () {
   it('exist as expected', function () {
     assert(require);
     assert(module);
-    // Example: /home/todd/github/karma-electron-launcher/test/integration-test/node-test.js
+    // Example: /home/todd/github/karma-electron/test/integration-test/node-test.js
     assert(/test\/integration-test\/node-test\.js$/.test(__filename),
       'Expected "' + __filename + '" to end with "test/integration-test/node-test.js"');
     assert.strictEqual(/^\/base\//.test(__filename), false,
       'Expected "' + __filename + '" to not start with "base"');
-    // Example: /home/todd/github/karma-electron-launcher/test/integration-test
+    // Example: /home/todd/github/karma-electron/test/integration-test
     assert(/test\/integration-test$/.test(__dirname),
       'Expected "' + __dirname + '" to end with "test/integration-test"');
     assert.strictEqual(/^\/base\//.test(__dirname), false,
@@ -31,7 +31,7 @@ describe('module', function () {
     it('identify as the page itself', function () {
       // jscs:disable maximumLineLength
       // DEV: `module.filename` should be something like
-      //   /home/todd/github/karma-electron-launcher2/node_modules/electron-prebuilt/dist/resources/atom.asar/renderer/lib/init.js
+      //   /home/todd/github/karma-electron/node_modules/electron-prebuilt/dist/resources/atom.asar/renderer/lib/init.js
       //   since the page is HTTP, not a `file://`
       // jscs:enable maximumLineLength
       assert(module.filename);
