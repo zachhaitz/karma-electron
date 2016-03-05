@@ -1,4 +1,4 @@
-# karma-electron-launcher2 [![Build status](https://travis-ci.org/twolfson/karma-electron-launcher2.svg?branch=master)](https://travis-ci.org/twolfson/karma-electron-launcher2) [![Build status](https://ci.appveyor.com/api/projects/status/urgpvcip7kl9q2ih?svg=true)](https://ci.appveyor.com/project/twolfson/karma-electron-launcher2)
+# karma-electron-launcher2 [![Build status](https://travis-ci.org/twolfson/karma-electron-launcher2.svg?branch=master)](https://travis-ci.org/twolfson/karma-electron-launcher2) [![Build status](https://ci.appveyor.com/api/projects/status/urgpvcip7kl9q2ih/branch/master?svg=true)](https://ci.appveyor.com/project/twolfson/karma-electron-launcher/branch/master)
 
 [Karma][] launcher for [Electron][]
 
