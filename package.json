@@ -1,7 +1,7 @@
 {
   "name": "karma-electron-launcher2",
   "description": "Karma launcher and framework for Electron",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "homepage": "https://github.com/twolfson/karma-electron-launcher2",
   "author": {
     "name": "Todd Wolfson",
