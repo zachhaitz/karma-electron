@@ -1,4 +1,6 @@
 # karma-electron changelog
+2.0.2 - Renamed package to `karma-electron`
+
 2.0.1 - Repaired Appveyor failures
 
 2.0.0 - Moved `files` hack to a framework implementation
