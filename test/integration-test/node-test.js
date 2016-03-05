@@ -29,11 +29,11 @@ describe('module', function () {
   describe('in the top level', function () {
     // DEV: Determined exepctations via https://gist.github.com/twolfson/c6213aa59f7c3f6477a7
     it('identify as the page itself', function () {
-      // browser1: module.filename /home/todd/github/gist-electron-node-integration-explore/index.html
-      // browser1.js:3 browser1: module.exports Object
-      // browser1.js:4 browser1: module.id .
-      // browser1.js:5 browser1: module.loaded true
-      // browser1.js:6 browser1: module.parent null
+      // TODO: Remedy this...
+      // assert.strictEqual(module.filename, 'wat');
+      assert.strictEqual(typeof module.exports, 'object');
+      assert.strictEqual(module.id, '.');
+      assert.strictEqual(submodule.loaded, true);
       assert.strictEqual(module.parent, null);
     });
   });
@@ -41,11 +41,12 @@ describe('module', function () {
   describe('in a child module', function () {
     // DEV: Determined exepctations via https://gist.github.com/twolfson/c6213aa59f7c3f6477a7
     it('identify as a standalone module', function () {
-      // browser2: module.filename /home/todd/github/gist-electron-node-integration-explore/browser2.js
-      // /home/todd/github/gist-electron-node-integration-explore/browser2.js:3 browser2: module.exports Object
-      // /home/todd/github/gist-electron-node-integration-explore/browser2.js:4 browser2: module.id /home/todd/github/gist-electron-node-integration-explore/browser2.js
-      // /home/todd/github/gist-electron-node-integration-explore/browser2.js:5 browser2: module.loaded false
-      // /home/todd/github/gist-electron-node-integration-explore/browser2.js:6 browser2: module.parent Module
+      assert(/test\/integration-test\/submodule\.js$/.test(submodule.filename),
+        'Expected "' + submodule.filename + '" to end with "test/integration-test/submodule.js"');
+      assert.strictEqual(submodule.exports.hello, 'world');
+      assert(/test\/integration-test\/submodule\.js$/.test(submodule.id),
+        'Expected "' + submodule.id + '" to end with "test/integration-test/submodule.js"');
+      assert.strictEqual(submodule.loaded, true);
       assert.strictEqual(submodule.parent, module);
     });
   });
