@@ -9,15 +9,15 @@ describe('All node integrations', function () {
     assert(require);
     assert(module);
     // Example: /home/todd/github/karma-electron/test/integration-test/node-test.js
-    assert(/test\/integration-test\/node-test\.js$/.test(__filename),
-      'Expected "' + __filename + '" to end with "test/integration-test/node-test.js"');
-    assert.strictEqual(/^\/base\//.test(__filename), false,
-      'Expected "' + __filename + '" to not start with "base"');
-    // Example: /home/todd/github/karma-electron/test/integration-test
-    assert(/test\/integration-test$/.test(__dirname),
-      'Expected "' + __dirname + '" to end with "test/integration-test"');
-    assert.strictEqual(/^\/base\//.test(__dirname), false,
-      'Expected "' + __dirname + '" to not start with "base"');
+    // assert(/test\/integration-test\/node-test\.js$/.test(__filename),
+    //   'Expected "' + __filename + '" to end with "test/integration-test/node-test.js"');
+    // assert.strictEqual(/^\/base\//.test(__filename), false,
+    //   'Expected "' + __filename + '" to not start with "base"');
+    // // Example: /home/todd/github/karma-electron/test/integration-test
+    // assert(/test\/integration-test$/.test(__dirname),
+    //   'Expected "' + __dirname + '" to end with "test/integration-test"');
+    // assert.strictEqual(/^\/base\//.test(__dirname), false,
+    //   'Expected "' + __dirname + '" to not start with "base"');
     assert(process);
     assert(setImmediate);
     assert(clearImmediate);
@@ -47,11 +47,24 @@ describe('module', function () {
     it('identify as a standalone module', function () {
       assert(/test[\/\\]integration-test[\/\\]submodule\.js$/.test(submodule.filename),
         'Expected "' + submodule.filename + '" to end with "test/integration-test/submodule.js"');
+      // Verify `hello` property of `module.exports`
       assert.strictEqual(submodule.exports.hello, 'world');
       assert(/test[\/\\]integration-test[\/\\]submodule\.js$/.test(submodule.id),
         'Expected "' + submodule.id + '" to end with "test/integration-test/submodule.js"');
       assert.strictEqual(submodule.loaded, true);
       assert.strictEqual(submodule.parent, module);
+
+      // Verify exported values
+      assert.strictEqual(submodule.hello, 'world');
+      assert(/test\/integration-test\/submodule\.js$/.test(submodule.filename),
+        'Expected "' + submodule.filename + '" to end with "test/integration-test/submodule.js"');
+      assert.strictEqual(/^\/base\//.test(submodule.filename), false,
+        'Expected "' + submodule.filename + '" to not start with "base"');
+      // Example: /home/todd/github/karma-electron/test/integration-test
+      assert(/test\/integration-test$/.test(submodule.dirname),
+        'Expected "' + submodule.dirname + '" to end with "test/integration-test"');
+      assert.strictEqual(/^\/base\//.test(submodule.dirname), false,
+        'Expected "' + submodule.dirname + '" to not start with "base"');
     });
   });
 });
