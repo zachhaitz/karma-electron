@@ -27,7 +27,7 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['electron', 'mocha'],
+    frameworks: ['mocha'],
 
     // list of files / patterns to load in the browser
     files: testFiles,
@@ -38,6 +38,7 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      '*-test.js': ['electron']
     },
 
     // test results reporter to use
