@@ -1,6 +1,6 @@
 # karma-electron [![Build status](https://travis-ci.org/twolfson/karma-electron.svg?branch=master)](https://travis-ci.org/twolfson/karma-electron) [![Build status](https://ci.appveyor.com/api/projects/status/urgpvcip7kl9q2ih/branch/master?svg=true)](https://ci.appveyor.com/project/twolfson/karma-electron-launcher/branch/master)
 
-[Karma][] launcher and framework for [Electron][]
+[Karma][] launcher and preprocessor for [Electron][]
 
 This was written to allow for directly testing in [Electron][] where we might want `require` to work automatically
 
@@ -29,11 +29,10 @@ Then, configure the module:
 browsers: ['Electron']
 
 // If you would like Node integration support (e.g. `require`)
-//   then, you must include this in `frameworks`
-frameworks: [
-    'electron'
-    // Other frameworks go here (e.g. `mocha`)
-]
+//   then, you must include this in `preprocessors`
+preprocessors: {
+  '**/*.js': ['electron']
+}
 ```
 
 Then, we can run Karma:
