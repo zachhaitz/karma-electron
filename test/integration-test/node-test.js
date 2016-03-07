@@ -1,5 +1,7 @@
 // Load in our dependencies
 var assert = require('assert');
+// DEV: By using a `node_modules` require here, we have verified that we support external requires
+void require('js-string-escape');
 // DEV: By using a `./` require here, we have verified that we support relative requires
 var submodule = require('./submodule');
 
