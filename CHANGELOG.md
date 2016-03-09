@@ -1,4 +1,6 @@
 # karma-electron changelog
+3.0.1 - Fixed `xtend` dependency
+
 3.0.0 - Moved from `framework` to `preprocessor` for better file-specific variable support (e.g. `__filename`, `__dirname`, `require`)
 
 2.0.2 - Renamed package to `karma-electron`
