@@ -7,3 +7,7 @@ module.exports.dirname = __dirname;
 
 // Add a special identifier for `module.exports` assertions
 module.exports.hello = 'world';
+
+// Add property with proper window context
+console.log(console.log);
+module.exports.before = window.before;

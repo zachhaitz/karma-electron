@@ -61,6 +61,11 @@ describe('module', function () {
       assert(/test[\/\\]integration-test[\/\\]test-files$/.test(submodule.dirname),
         'Expected "' + submodule.dirname + '" to end with "test/integration-test/test-files"');
     });
+
+    it('has same window context as parent', function () {
+      console.log(console.log + '');
+      assert.strictEqual(submodule.before, window.before);
+    });
   });
 });
 
