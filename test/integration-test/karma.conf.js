@@ -4,23 +4,24 @@ module.exports = function (config) {
   // Set up default files to test against
   var karmaTest = 'karma-test.js';
   var successTest = 'success-test.js';
+  var phantomJsTest = 'phantomjs-test.js';
   var failureTest = 'failure-test.js';
   var uncaughtExceptionTest = 'uncaught-exception-test.js';
   var testFiles = ['*-test.js'];
-  var excludeFiles = [failureTest, karmaTest, uncaughtExceptionTest];
+  var excludeFiles = [failureTest, karmaTest, phantomJsTest, uncaughtExceptionTest];
 
   // If we are testing uncaught exceptions, then update our tests
   if (process.env.TEST_TYPE === 'UNCAUGHT_EXCEPTION') {
     testFiles = [uncaughtExceptionTest];
-    excludeFiles = [failureTest, karmaTest];
+    excludeFiles = [failureTest, karmaTest, phantomJsTest];
   } else if (process.env.TEST_TYPE === 'FAILURE') {
     testFiles = [failureTest];
-    excludeFiles = [karmaTest, uncaughtExceptionTest];
+    excludeFiles = [karmaTest, phantomJsTest, uncaughtExceptionTest];
   } else if (process.env.TEST_TYPE === 'KARMA') {
-    testFiles = [karmaTest];
+    testFiles = [karmaTest, phantomJsTest];
     excludeFiles = [failureTest, uncaughtExceptionTest];
   } else if (process.env.TEST_TYPE === 'PHANTOMJS') {
-    testFiles = [successTest];
+    testFiles = [successTest, phantomJsTest];
     excludeFiles = [];
   } else if (process.env.TEST_TYPE) {
     throw new Error('Unrecognized test type "' + process.env.TEST_TYPE + '"');

@@ -1,7 +1,7 @@
 // Define a helper for our asserts
 function assertUndefinedStr(val) {
   if (val !== 'undefined') {
-    throw new Error('Expected "' + val + '" to be undefined but it was not');
+    throw new Error('Expected "' + val + '" to be "undefined" but it was not');
   }
 }
 
