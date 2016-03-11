@@ -35,10 +35,10 @@ module.exports = function (config) {
     // list of files to exclude
     exclude: excludeFiles,
 
-    browserNoActivityTimeout: 500,
-    client: {
-      useIframe: false
-    },
+    browserNoActivityTimeout: 60000,
+    // client: {
+    //   useIframe: false
+    // },
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
