@@ -48,7 +48,7 @@
     "foundry-release-npm": "~2.0.2",
     "jscs": "~1.7.3",
     "jshint": "~2.5.10",
-    "karma": "git://github.com/twolfson/karma#523ac09",
+    "karma": "git://github.com/twolfson/karma#03273f2",
     "karma-mocha": "~0.2.2",
     "mocha": "~1.11.0",
     "twolfson-style": "~1.6.0"
