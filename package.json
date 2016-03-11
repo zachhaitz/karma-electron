@@ -21,7 +21,7 @@
   },
   "license": "Unlicense",
   "scripts": {
-    "postinstall": "rm -r node_modules/karma && cd node_modules && git clone https://github.com/twolfson/karma && cd karma && git checkout 03273f2 && npm install && npm run build && cd ../../",
+    "postinstall": "(rm -r node_modules/karma || true) && cd node_modules && git clone https://github.com/twolfson/karma && cd karma && git checkout 03273f2 && npm install && npm run build && cd ../../",
     "postinstall-comment": "We want to use `git` dependencies but for some reason, they don't work for `karma`. AppVeyor is failing even when we use ShellJS",
     "precheck": "twolfson-style precheck lib/ test/",
     "lint": "twolfson-style lint lib/ test/",
