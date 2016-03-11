@@ -3,7 +3,7 @@ var assert = require('assert');
 // DEV: By using a `node_modules` require here, we have verified that we support external requires
 void require('js-string-escape');
 // DEV: By using a `./` require here, we have verified that we support relative requires
-var submodule = require('./submodule');
+var submodule = require('./test-files/submodule');
 
 // Start our tests
 describe('All node integrations', function () {
@@ -43,23 +43,23 @@ describe('module', function () {
   describe('in a child module', function () {
     // DEV: Determined exepctations via https://gist.github.com/twolfson/c6213aa59f7c3f6477a7
     it('identify as a standalone module', function () {
-      assert(/test[\/\\]integration-test[\/\\]submodule\.js$/.test(submodule.filename),
-        'Expected "' + submodule.filename + '" to end with "test/integration-test/submodule.js"');
+      assert(/test[\/\\]integration-test[\/\\]test-files[\/\\]submodule\.js$/.test(submodule.filename),
+        'Expected "' + submodule.filename + '" to end with "test/integration-test/test-files/submodule.js"');
       // Verify `hello` property of `module.exports`
       assert.strictEqual(submodule.exports.hello, 'world');
-      assert(/test[\/\\]integration-test[\/\\]submodule\.js$/.test(submodule.id),
-        'Expected "' + submodule.id + '" to end with "test/integration-test/submodule.js"');
+      assert(/test[\/\\]integration-test[\/\\]test-files[\/\\]submodule\.js$/.test(submodule.id),
+        'Expected "' + submodule.id + '" to end with "test/integration-test/test-files/submodule.js"');
       assert.strictEqual(submodule.loaded, true);
       assert.strictEqual(submodule.parent, module);
 
       // Verify exported values
       assert.strictEqual(submodule.hello, 'world');
       // Example: /home/todd/github/karma-electron/test/integration-test/node-test.js
-      assert(/test[\/\\]integration-test[\/\\]submodule\.js$/.test(submodule.filename),
-        'Expected "' + submodule.filename + '" to end with "test/integration-test/submodule.js"');
+      assert(/test[\/\\]integration-test[\/\\]test-files[\/\\]submodule\.js$/.test(submodule.filename),
+        'Expected "' + submodule.filename + '" to end with "test/integration-test/test-files/submodule.js"');
       // Example: /home/todd/github/karma-electron/test/integration-test
-      assert(/test[\/\\]integration-test$/.test(submodule.dirname),
-        'Expected "' + submodule.dirname + '" to end with "test/integration-test"');
+      assert(/test[\/\\]integration-test[\/\\]test-files$/.test(submodule.dirname),
+        'Expected "' + submodule.dirname + '" to end with "test/integration-test/test-files"');
     });
   });
 });
