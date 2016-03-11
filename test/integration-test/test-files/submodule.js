@@ -9,5 +9,4 @@ module.exports.dirname = __dirname;
 module.exports.hello = 'world';
 
 // Add property with proper window context
-console.log('hi', window.before + '', console.log + '');
 module.exports.before = window.before;
