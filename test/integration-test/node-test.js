@@ -68,7 +68,6 @@ describe('module', function () {
     });
 
     it('has same window context as parent', function () {
-      console.log(console.log + '');
       assert.strictEqual(submodule.before, window.before);
     });
   });
