@@ -21,7 +21,8 @@
   },
   "license": "Unlicense",
   "scripts": {
-    "postinstall": "echo \"Be sure to override karma via npm link. We can't see to get a git URL working =(\" 1>&2",
+    "postinstall": "cd node_modules && git clone https://github.com/twolfson/karma && cd karma && git checkout 03273f2 && npm install && npm run build && cd .. && cd ..",
+    "postinstall-comment": "We want to use `git` dependencies but for some reason, they don't work for `karma`",
     "precheck": "twolfson-style precheck lib/ test/",
     "lint": "twolfson-style lint lib/ test/",
     "test": "npm run test-karma-all && npm run lint",
@@ -49,7 +50,6 @@
     "foundry-release-npm": "~2.0.2",
     "jscs": "~1.7.3",
     "jshint": "~2.5.10",
-    "karma": "~0.13.21",
     "karma-mocha": "~0.2.2",
     "karma-phantomjs-launcher": "~1.0.0",
     "mocha": "~1.11.0",
