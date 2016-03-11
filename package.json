@@ -1,7 +1,7 @@
 {
   "name": "karma-electron",
   "description": "Karma launcher and preprocessor for Electron",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "homepage": "https://github.com/twolfson/karma-electron",
   "author": {
     "name": "Todd Wolfson",
@@ -30,6 +30,7 @@
     "test-karma-karma-comment": "# DEV: We run `test-karma-karma` twice to verify no user-data-dir is leaking",
     "test-karma-karma": "cross-env TEST_TYPE=KARMA karma start test/integration-test/karma.conf.js --single-run && cross-env TEST_TYPE=KARMA karma start test/integration-test/karma.conf.js --single-run",
     "test-karma-failure": "node bin/verify-failure.js TEST_TYPE=FAILURE karma start test/integration-test/karma.conf.js --single-run",
+    "test-karma-phantomjs": "cross-env TEST_TYPE=PHANTOMJS karma start test/integration-test/karma.conf.js --single-run --browsers PhantomJS",
     "test-karma-single-run": "karma start test/integration-test/karma.conf.js --single-run",
     "test-karma-uncaught-exception": "node bin/verify-failure.js TEST_TYPE=UNCAUGHT_EXCEPTION karma start test/integration-test/karma.conf.js --single-run",
     "test-windows": "npm run test-karma-all"
@@ -50,7 +51,9 @@
     "jshint": "~2.5.10",
     "karma": "~0.13.21",
     "karma-mocha": "~0.2.2",
+    "karma-phantomjs-launcher": "~1.0.0",
     "mocha": "~1.11.0",
+    "phantomjs-prebuilt": "~2.1.5",
     "twolfson-style": "~1.6.0"
   },
   "keywords": [

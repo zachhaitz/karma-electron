@@ -3,21 +3,28 @@
 module.exports = function (config) {
   // Set up default files to test against
   var karmaTest = 'karma-test.js';
+  var successTest = 'success-test.js';
+  var phantomJsTest = 'phantomjs-test.js';
   var failureTest = 'failure-test.js';
   var uncaughtExceptionTest = 'uncaught-exception-test.js';
   var testFiles = ['*-test.js'];
-  var excludeFiles = [failureTest, karmaTest, uncaughtExceptionTest];
+  var excludeFiles = [failureTest, karmaTest, phantomJsTest, uncaughtExceptionTest];
 
   // If we are testing uncaught exceptions, then update our tests
   if (process.env.TEST_TYPE === 'UNCAUGHT_EXCEPTION') {
     testFiles = [uncaughtExceptionTest];
-    excludeFiles = [failureTest, karmaTest];
+    excludeFiles = [failureTest, karmaTest, phantomJsTest];
   } else if (process.env.TEST_TYPE === 'FAILURE') {
     testFiles = [failureTest];
-    excludeFiles = [karmaTest, uncaughtExceptionTest];
+    excludeFiles = [karmaTest, phantomJsTest, uncaughtExceptionTest];
   } else if (process.env.TEST_TYPE === 'KARMA') {
-    testFiles = [karmaTest];
-    excludeFiles = [failureTest, uncaughtExceptionTest];
+    testFiles = [karmaTest, phantomJsTest];
+    excludeFiles = [failureTest, phantomJsTest, uncaughtExceptionTest];
+  } else if (process.env.TEST_TYPE === 'PHANTOMJS') {
+    testFiles = [successTest, phantomJsTest];
+    excludeFiles = [];
+  } else if (process.env.TEST_TYPE) {
+    throw new Error('Unrecognized test type "' + process.env.TEST_TYPE + '"');
   }
 
   // Define our config
@@ -79,7 +86,8 @@ module.exports = function (config) {
     // https://github.com/karma-runner/karma-chrome-launcher/blob/v0.2.2/examples/simple/karma.conf.js
     plugins: [
         require('../../'),
-        'karma-mocha'
+        'karma-mocha',
+        'karma-phantomjs-launcher'
     ]
   });
 };
