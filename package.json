@@ -21,6 +21,7 @@
   },
   "license": "Unlicense",
   "scripts": {
+    "postinstall": "cd node_modules/karma && npm install && npm run build && cd -",
     "precheck": "twolfson-style precheck lib/ test/",
     "lint": "twolfson-style lint lib/ test/",
     "test": "npm run test-karma-all && npm run lint",
@@ -47,7 +48,7 @@
     "foundry-release-npm": "~2.0.2",
     "jscs": "~1.7.3",
     "jshint": "~2.5.10",
-    "karma": "~0.13.21",
+    "karma": "git://github.com/twolfson/karma#523ac09",
     "karma-mocha": "~0.2.2",
     "mocha": "~1.11.0",
     "twolfson-style": "~1.6.0"
