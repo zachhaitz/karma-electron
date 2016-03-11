@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 // Load in our dependencies
+// TODO: Remove this file once Karma has patched `postMessage`` support
+//   https://github.com/karma-runner/karma/pull/1984
 var path = require('path');
 var shelljs = require('shelljs');
 
