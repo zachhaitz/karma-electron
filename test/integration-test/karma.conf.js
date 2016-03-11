@@ -19,7 +19,7 @@ module.exports = function (config) {
     excludeFiles = [karmaTest, phantomJsTest, uncaughtExceptionTest];
   } else if (process.env.TEST_TYPE === 'KARMA') {
     testFiles = [karmaTest, phantomJsTest];
-    excludeFiles = [failureTest, uncaughtExceptionTest];
+    excludeFiles = [failureTest, phantomJsTest, uncaughtExceptionTest];
   } else if (process.env.TEST_TYPE === 'PHANTOMJS') {
     testFiles = [successTest, phantomJsTest];
     excludeFiles = [];
