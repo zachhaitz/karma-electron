@@ -1,4 +1,5 @@
 // Load in our dependencies
+// DEV: By using an internal require here, we have verified that we support internal requires
 var assert = require('assert');
 // DEV: By using a `node_modules` require here, we have verified that we support external requires
 void require('js-string-escape');
