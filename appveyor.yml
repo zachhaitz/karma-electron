@@ -2,8 +2,7 @@ version: "{build}"
 
 environment:
   matrix:
-    # TODO: Restore `node@0.10` testing. It was disabled due to shelljs issues
-    # - nodejs_version: "0.10"
+    - nodejs_version: "0.10"
     - nodejs_version: "0.12"
     - nodejs_version: "4.1"
 

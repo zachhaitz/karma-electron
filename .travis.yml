@@ -4,8 +4,7 @@ node_js:
   - "4.1"
   - "0.12"
   - "0.11"
-  # TODO: Restore `node@0.10` testing. It was disabled due to shelljs issues
-  # - "0.10"
+  - "0.10"
 matrix:
   allow_failures:
     - node_js: "0.11"
