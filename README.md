@@ -29,9 +29,15 @@ Then, configure the module:
 browsers: ['Electron']
 
 // If you would like Node integration support (e.g. `require`)
-//   then, you must include this in `preprocessors`
+//   then, you must include this in `preprocessors` and `client`
+// DEV: preprocessors is for backfilling `__filename` and local `require` paths
 preprocessors: {
   '**/*.js': ['electron']
+},
+// DEV: `useIframe: false` is for launching a new window instead of using an iframe
+//   In Electron, iframes don't get `nodeIntegration` priveleges yet windows do
+client: {
+  useIframe: false
 }
 ```
 
