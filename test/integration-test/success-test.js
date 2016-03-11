@@ -1,9 +1,8 @@
-// Load in our dependencies
-var assert = require('assert');
-
 // Start our tests
 describe('A basic operation', function () {
   it('asserts without errors', function () {
-    assert.strictEqual(1 + 1, 2);
+    if (1 + 1 !== 2) {
+      throw new Error('1 + 1 is not equal to 2');
+    }
   });
 });
