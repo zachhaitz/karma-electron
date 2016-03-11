@@ -35,16 +35,16 @@ module.exports = function (config) {
     // list of files to exclude
     exclude: excludeFiles,
 
-    browserNoActivityTimeout: 600000,
+    browserNoActivityTimeout: 500,
     client: {
       useIframe: false
     },
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    // preprocessors: {
-    //   '*-test.js': ['electron']
-    // },
+    preprocessors: {
+      '*-test.js': ['electron']
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
