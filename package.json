@@ -21,7 +21,7 @@
   },
   "license": "Unlicense",
   "scripts": {
-    "postinstall": "cd node_modules/karma && npm install && npm run build && cd -",
+    "postinstall": "cd node_modules/karma && npm install && rm -r node_modules/karma && ln -s ../ node_modules/karma && npm run build && cd -",
     "precheck": "twolfson-style precheck lib/ test/",
     "lint": "twolfson-style lint lib/ test/",
     "test": "npm run test-karma-all && npm run lint",
