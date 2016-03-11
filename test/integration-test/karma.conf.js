@@ -3,6 +3,7 @@
 module.exports = function (config) {
   // Set up default files to test against
   var karmaTest = 'karma-test.js';
+  var successTest = 'success-test.js';
   var failureTest = 'failure-test.js';
   var uncaughtExceptionTest = 'uncaught-exception-test.js';
   var testFiles = ['*-test.js'];
@@ -18,6 +19,11 @@ module.exports = function (config) {
   } else if (process.env.TEST_TYPE === 'KARMA') {
     testFiles = [karmaTest];
     excludeFiles = [failureTest, uncaughtExceptionTest];
+  } else if (process.env.TEST_TYPE === 'PHANTOMJS') {
+    testFiles = [successTest];
+    excludeFiles = [];
+  } else if (process.env.TEST_TYPE) {
+    throw new Error('Unrecognized test type "' + process.env.TEST_TYPE + '"');
   }
 
   // Define our config
@@ -75,7 +81,8 @@ module.exports = function (config) {
     // https://github.com/karma-runner/karma-chrome-launcher/blob/v0.2.2/examples/simple/karma.conf.js
     plugins: [
         require('../../'),
-        'karma-mocha'
+        'karma-mocha',
+        'karma-phantomjs-launcher'
     ]
   });
 };
