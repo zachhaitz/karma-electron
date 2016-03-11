@@ -1,4 +1,6 @@
 # karma-electron changelog
+3.0.2 - Added tests to verify we don't pollute non-Node environments
+
 3.0.1 - Fixed `xtend` dependency
 
 3.0.0 - Moved from `framework` to `preprocessor` for better file-specific variable support (e.g. `__filename`, `__dirname`, `require`)
