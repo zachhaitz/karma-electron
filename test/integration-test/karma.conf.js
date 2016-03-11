@@ -35,7 +35,6 @@ module.exports = function (config) {
     // list of files to exclude
     exclude: excludeFiles,
 
-    browserNoActivityTimeout: 500,
     client: {
       useIframe: false
     },

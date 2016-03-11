@@ -1,10 +1,5 @@
 // Load in our dependencies
 var assert = require('assert');
-// TODO: Remove this comment
-//   The issue is being caused by `require` storing the context of the parent window
-//   To resolve it, we need to define a new `require` which executes in this `iframe` context
-//   https://github.com/nodejs/node/blob/31a8708caaee62dc186a78827b0983b97513f728/lib/module.js#L387-L391
-//   or maybe we can get iframe-less or webview modes running
 // DEV: By using a `node_modules` require here, we have verified that we support external requires
 void require('js-string-escape');
 // DEV: By using a `./` require here, we have verified that we support relative requires
