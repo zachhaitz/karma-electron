@@ -1,7 +1,7 @@
 {
   "name": "karma-electron",
   "description": "Karma launcher and preprocessor for Electron",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "homepage": "https://github.com/twolfson/karma-electron",
   "author": {
     "name": "Todd Wolfson",
@@ -24,7 +24,7 @@
     "precheck": "twolfson-style precheck lib/ test/",
     "lint": "twolfson-style lint lib/ test/",
     "test": "npm run test-karma-all && npm run lint",
-    "test-karma-all": "npm run test-karma-single-run && npm run test-karma-failure && npm run test-karma-uncaught-exception && npm run test-karma-karma",
+    "test-karma-all": "npm run test-karma-single-run && npm run test-karma-failure && npm run test-karma-uncaught-exception && npm run test-karma-karma && npm run test-karma-phantomjs",
     "test-karma-continuous": "karma start test/integration-test/karma.conf.js --no-single-run",
     "test-karma-karma-comment": "# DEV: We run `test-karma-karma` twice to verify no user-data-dir is leaking",
     "test-karma-karma": "cross-env TEST_TYPE=KARMA karma start test/integration-test/karma.conf.js --single-run && cross-env TEST_TYPE=KARMA karma start test/integration-test/karma.conf.js --single-run",

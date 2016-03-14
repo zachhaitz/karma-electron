@@ -1,4 +1,6 @@
 # karma-electron changelog
+3.0.3 - Added missing `test-karma-phantomjs` to `test-karma-all`
+
 3.0.2 - Added tests to verify we don't pollute non-Node environments
 
 3.0.1 - Fixed `xtend` dependency
