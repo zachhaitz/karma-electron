@@ -48,7 +48,7 @@
     "foundry-release-npm": "~2.0.2",
     "jscs": "~1.7.3",
     "jshint": "~2.5.10",
-    "karma": "https://rawgit.com/twolfson/karma/83fb093/karma-0.13.22.tgz",
+    "karma": "https://github.com/twolfson/karma/releases/download/use-context-window-a45e2c6/karma-0.13.22.tgz",
     "karma-mocha": "~0.2.2",
     "karma-phantomjs-launcher": "~1.0.0",
     "mocha": "~1.11.0",
