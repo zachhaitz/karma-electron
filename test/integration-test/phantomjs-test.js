@@ -15,6 +15,5 @@ describe('All node integrations', function () {
     assertUndefinedStr(typeof process);
     assertUndefinedStr(typeof setImmediate);
     assertUndefinedStr(typeof clearImmediate);
-    assertUndefinedStr(typeof global);
   });
 });
