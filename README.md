@@ -11,6 +11,7 @@ This was written to allow for directly testing in [Electron][] where we might wa
 
 - Tested via CI on Linux and Windows
 - Support for Node.js integration in the renderer process (e.g. `process`, `require`, `__filename`)
+    - *Currently submodules (e.g. `require('./abc')`) don't receive the same `window` object. See [docs/submodules.md](docs/submodules.md) for workarounds.*
 - Support for hidden browser windows
 - Support for isolated test runs to prevent cookie/localStorage pollution
 

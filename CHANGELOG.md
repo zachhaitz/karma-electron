@@ -1,4 +1,6 @@
 # karma-electron changelog
+3.1.1 - Added notice about submodule support
+
 3.1.0 - Added support for source maps via @otbe in #4
 
 3.0.5 - Upgraded to Electron@0.37.4 in development via @ppitonak in #1
