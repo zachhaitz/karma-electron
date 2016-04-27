@@ -19,9 +19,8 @@ module.exports = function (config) {
     testFiles = [failureTest];
     excludeFiles.delete(failureTest);
   } else if (process.env.TEST_TYPE === 'KARMA') {
-    testFiles = [karmaTest, phantomJsTest];
+    testFiles = [karmaTest];
     excludeFiles.delete(karmaTest);
-    excludeFiles.delete(phantomJsTest);
   } else if (process.env.TEST_TYPE === 'PHANTOMJS') {
     testFiles = [successTest, phantomJsTest];
     excludeFiles = new Set();
