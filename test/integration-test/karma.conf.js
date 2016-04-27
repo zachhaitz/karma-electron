@@ -7,9 +7,10 @@ module.exports = function (config) {
   var successTest = 'success-test.js';
   var phantomJsTest = 'phantomjs-test.js';
   var failureTest = 'failure-test.js';
+  var sourceMapTest = 'source-map-test.js';
   var uncaughtExceptionTest = 'uncaught-exception-test.js';
   var testFiles = ['*-test.js'];
-  var excludeFiles = new Set([failureTest, karmaTest, phantomJsTest, uncaughtExceptionTest]);
+  var excludeFiles = new Set([failureTest, karmaTest, phantomJsTest, sourceMapTest, uncaughtExceptionTest]);
 
   // If we are testing uncaught exceptions, then update our tests
   if (process.env.TEST_TYPE === 'UNCAUGHT_EXCEPTION') {
@@ -24,6 +25,9 @@ module.exports = function (config) {
   } else if (process.env.TEST_TYPE === 'PHANTOMJS') {
     testFiles = [successTest, phantomJsTest];
     excludeFiles = new Set();
+  } else if (process.env.TEST_TYPE === 'SOURCE_MAP') {
+    testFiles = [sourceMapTest];
+    excludeFiles.delete(sourceMapTest);
   } else if (process.env.TEST_TYPE) {
     throw new Error('Unrecognized test type "' + process.env.TEST_TYPE + '"');
   }
