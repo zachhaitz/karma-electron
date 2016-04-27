@@ -1,4 +1,10 @@
 # karma-electron changelog
+3.1.0 - Added support for source maps via @otbe in #4
+
+3.0.5 - Upgraded to Electron@0.37.4 in development via @ppitonak in #1
+
+3.0.4 - Added tests for Node.js@5 in Travis CI via @ppitonak in #1
+
 3.0.3 - Added missing `test-karma-phantomjs` to `test-karma-all`
 
 3.0.2 - Added tests to verify we don't pollute non-Node environments
