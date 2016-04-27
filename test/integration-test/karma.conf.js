@@ -6,6 +6,7 @@ module.exports = function (config) {
   var karmaTest = 'karma-test.js';
   var successTest = 'success-test.js';
   var phantomJsTest = 'phantomjs-test.js';
+  var eofCommentTest = 'eof-comment-test.js';
   var failureTest = 'failure-test.js';
   var sourceMapTest = 'source-map-test.js';
   var uncaughtExceptionTest = 'uncaught-exception-test.js';
@@ -16,6 +17,9 @@ module.exports = function (config) {
   if (process.env.TEST_TYPE === 'UNCAUGHT_EXCEPTION') {
     testFiles = [uncaughtExceptionTest];
     excludeFiles.delete(uncaughtExceptionTest);
+  } else if (process.env.TEST_TYPE === 'EOF_COMMENT') {
+    testFiles = [eofCommentTest];
+    excludeFiles.delete(eofCommentTest);
   } else if (process.env.TEST_TYPE === 'FAILURE') {
     testFiles = [failureTest];
     excludeFiles.delete(failureTest);
