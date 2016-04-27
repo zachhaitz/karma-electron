@@ -1,7 +1,7 @@
 {
   "name": "karma-electron",
   "description": "Karma launcher and preprocessor for Electron",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "homepage": "https://github.com/twolfson/karma-electron",
   "author": {
     "name": "Todd Wolfson",
@@ -24,8 +24,9 @@
     "precheck": "twolfson-style precheck lib/ test/",
     "lint": "twolfson-style lint lib/ test/",
     "test": "npm run test-karma-all && npm run lint",
-    "test-karma-all": "npm run test-karma-single-run && npm run test-karma-failure && npm run test-karma-uncaught-exception && npm run test-karma-karma && npm run test-karma-phantomjs && npm run test-karma-source-map",
+    "test-karma-all": "npm run test-karma-single-run && npm run test-karma-failure && npm run test-karma-uncaught-exception && npm run test-karma-karma && npm run test-karma-phantomjs && npm run test-karma-eof-comment && npm run test-karma-source-map",
     "test-karma-continuous": "karma start test/integration-test/karma.conf.js --no-single-run",
+    "test-karma-eof-comment": "cross-env TEST_TYPE=EOF_COMMENT karma start test/integration-test/karma.conf.js --single-run",
     "test-karma-karma-comment": "# DEV: We run `test-karma-karma` twice to verify no user-data-dir is leaking",
     "test-karma-karma": "cross-env TEST_TYPE=KARMA karma start test/integration-test/karma.conf.js --single-run && cross-env TEST_TYPE=KARMA karma start test/integration-test/karma.conf.js --single-run",
     "test-karma-failure": "node bin/verify-failure.js TEST_TYPE=FAILURE karma start test/integration-test/karma.conf.js --single-run",
