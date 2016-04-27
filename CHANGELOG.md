@@ -1,4 +1,6 @@
 # karma-electron changelog
+3.2.0 - Added tolerance for EOF comments
+
 3.1.1 - Added notice about submodule support
 
 3.1.0 - Added support for source maps via @otbe in #4
