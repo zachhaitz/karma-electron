@@ -42,6 +42,7 @@
     "xtend": "~4.0.1"
   },
   "devDependencies": {
+    "collections": "~3.0.0",
     "cross-env": "~1.0.7",
     "electron-prebuilt": "~0.37.4",
     "foundry": "~4.0.3",

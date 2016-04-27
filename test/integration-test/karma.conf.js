@@ -1,5 +1,6 @@
 // Karma configuration
 // Generated on Thu Mar 03 2016 19:57:50 GMT-0600 (CST)
+var Set = require('collections/set');
 module.exports = function (config) {
   // Set up default files to test against
   var karmaTest = 'karma-test.js';
@@ -8,21 +9,22 @@ module.exports = function (config) {
   var failureTest = 'failure-test.js';
   var uncaughtExceptionTest = 'uncaught-exception-test.js';
   var testFiles = ['*-test.js'];
-  var excludeFiles = [failureTest, karmaTest, phantomJsTest, uncaughtExceptionTest];
+  var excludeFiles = new Set([failureTest, karmaTest, phantomJsTest, uncaughtExceptionTest]);
 
   // If we are testing uncaught exceptions, then update our tests
   if (process.env.TEST_TYPE === 'UNCAUGHT_EXCEPTION') {
     testFiles = [uncaughtExceptionTest];
-    excludeFiles = [failureTest, karmaTest, phantomJsTest];
+    excludeFiles.delete(uncaughtExceptionTest);
   } else if (process.env.TEST_TYPE === 'FAILURE') {
     testFiles = [failureTest];
-    excludeFiles = [karmaTest, phantomJsTest, uncaughtExceptionTest];
+    excludeFiles.delete(failureTest);
   } else if (process.env.TEST_TYPE === 'KARMA') {
     testFiles = [karmaTest, phantomJsTest];
-    excludeFiles = [failureTest, phantomJsTest, uncaughtExceptionTest];
+    excludeFiles.delete(karmaTest);
+    excludeFiles.delete(phantomJsTest);
   } else if (process.env.TEST_TYPE === 'PHANTOMJS') {
     testFiles = [successTest, phantomJsTest];
-    excludeFiles = [];
+    excludeFiles = new Set();
   } else if (process.env.TEST_TYPE) {
     throw new Error('Unrecognized test type "' + process.env.TEST_TYPE + '"');
   }
@@ -40,7 +42,7 @@ module.exports = function (config) {
     files: testFiles,
 
     // list of files to exclude
-    exclude: excludeFiles,
+    exclude: excludeFiles.toArray(),
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
