@@ -1,4 +1,6 @@
 # karma-electron changelog
+4.0.0 - Added submodules support by using local `require` and documenting `useIframe` usage (now supported by `karma@1.1.0` for Electron)
+
 3.2.1 - Added configuration info to submodules documentation
 
 3.2.0 - Added tolerance for EOF comments
