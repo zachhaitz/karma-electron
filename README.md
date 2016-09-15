@@ -14,6 +14,18 @@ This was written to allow for directly testing in [Electron][] where we might wa
 - Support for hidden browser windows
 - Support for isolated test runs to prevent cookie/localStorage pollution
 
+**Requirements:**
+
+- `karma>=1.1.0` to work within `electron's` security policy for shared context between parent/child windows
+    - See https://github.com/karma-runner/karma/pull/1984 for more information
+
+**Notices:**
+
+- This plugin has been tested against `electron@0.37.4` and `electron@1.3.3` but should support the latest version
+- This plugin is best suited for testing the renderer portion of an `electron` application
+    - For testing a full application, see `electron's` documentation on Selenium and WebDriver
+    - https://github.com/electron/electron/blob/v1.3.6/docs/tutorial/using-selenium-and-webdriver.md
+
 ## Getting Started
 On a project that has been set up with `karma init` already, install the module via:
 
