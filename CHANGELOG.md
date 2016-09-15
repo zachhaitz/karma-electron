@@ -1,4 +1,6 @@
 # karma-electron changelog
+4.1.1 - Added requirements and notices to README. Fixes #13
+
 4.1.0 - Added loading of `electron` package due to `electron-prebuilt` deprecation via @MLefebvreICO in #10
 
 4.0.0 - Added submodules support by using local `require` and documenting `useIframe` usage (now supported by `karma@1.1.0` for Electron)
