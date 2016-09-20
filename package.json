@@ -23,6 +23,7 @@
   "scripts": {
     "precheck": "twolfson-style precheck lib/ test/",
     "lint": "twolfson-style lint lib/ test/",
+    "start-reference": "electron test/reference",
     "test": "npm run test-karma-all && npm run lint",
     "test-karma-all": "npm run test-karma-single-run && npm run test-karma-failure && npm run test-karma-uncaught-exception && npm run test-karma-karma && npm run test-karma-phantomjs && npm run test-karma-eof-comment && npm run test-karma-source-map",
     "test-karma-continuous": "karma start test/integration-test/karma.conf.js --no-single-run",

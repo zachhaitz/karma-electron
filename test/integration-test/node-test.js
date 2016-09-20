@@ -26,7 +26,7 @@ describe('All node integrations', function () {
 
 describe('module', function () {
   describe('in the top level', function () {
-    // DEV: Determined exepctations via https://gist.github.com/twolfson/c6213aa59f7c3f6477a7
+    // DEV: Determined exepctations via `../reference`
     it('identify as the page itself', function () {
       // jscs:disable maximumLineLength
       // DEV: `module.filename` should be something like
@@ -42,7 +42,7 @@ describe('module', function () {
   });
 
   describe('in a child module', function () {
-    // DEV: Determined exepctations via https://gist.github.com/twolfson/c6213aa59f7c3f6477a7
+    // DEV: Determined exepctations via `../reference`
     it('identify as a standalone module', function () {
       assert(/test[\/\\]integration-test[\/\\]test-files[\/\\]submodule\.js$/.test(submodule.filename),
         'Expected "' + submodule.filename + '" to end with "test/integration-test/test-files/submodule.js"');
