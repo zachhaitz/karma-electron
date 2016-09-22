@@ -1,4 +1,6 @@
 # karma-electron changelog
+4.1.3 - Upgraded to `jscs@3.0.7` and `jshint@2.9.3` to resolve lint errors
+
 4.1.2 - Added reference application for default `electron` behavior
 
 4.1.1 - Added requirements and notices to README. Fixes #13
