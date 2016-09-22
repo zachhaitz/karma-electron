@@ -84,6 +84,9 @@ ELECTRON_BIN=/usr/bin/electron karma start
 We support the following configurations:
 
 - client `Object` - Container for configuring child windows loaded from Karma
+    - __filenameOverride `String` - Override `__filename` to be another path (e.g. `/path/to/my-index.html`)
+        - This will also affect `__dirname` and `module.filename` as those are derived from `__filename`
+        - By default, `__filename` will point to Karma's `context.html`
     - loadScriptsViaRequire `Boolean` - Load scripts via `require` instead of `<script src=`
         - This sets `__filename`, `__dirname`, and `module` to match the script instead of Karma's `context.html`
         - By default, this is `false` and we directly load the original scripts content
@@ -93,8 +96,15 @@ We support the following configurations:
 ```js
 module.exports = function (config) {
   config.set({
-    // Use `require` instead of `<script src=` to load scripts
     client: {
+      // DEV: These 2 options aren't typically used together
+      //   This is for demonstration purposes
+
+      // Override top level `__filename` to be `/home/.../my-electron-app/index.html`
+      //   where `__dirname` is `/home/.../my-electron-app`
+      __filenameOverride: __dirname + '/index.html',
+
+      // Use `require` instead of `<script src=` to load scripts
       loadScriptsViaRequire: true
     }
   });
