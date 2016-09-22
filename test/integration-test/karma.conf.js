@@ -13,9 +13,11 @@ module.exports = function (config) {
   var nodeCommonTest = 'node-common-test.js';
   var nodeRequireTest = 'node-require-test.js';
   var nodeScriptSrcTest = 'node-script-src-test.js';
+  var customContextFileTest = 'custom-context-file-test.js';
   var testFiles = ['*-test.js'];
   var excludeFiles = new Set([
-    failureTest, karmaTest, nodeRequireTest, phantomJsTest, sourceMapTest, uncaughtExceptionTest]);
+    customContextFileTest, failureTest, karmaTest,
+    nodeRequireTest, phantomJsTest, sourceMapTest, uncaughtExceptionTest]);
 
   // If we are testing uncaught exceptions, then update our tests
   if (process.env.TEST_TYPE === 'UNCAUGHT_EXCEPTION') {
@@ -36,6 +38,9 @@ module.exports = function (config) {
   } else if (process.env.TEST_TYPE === 'SOURCE_MAP') {
     testFiles = [sourceMapTest];
     excludeFiles.delete(sourceMapTest);
+  } else if (process.env.TEST_TYPE === 'CUSTOM_CONTEXT_FILE') {
+    testFiles = [customContextFileTest];
+    excludeFiles.delete(customContextFileTest);
   } else if (process.env.TEST_TYPE === 'NODE_REQUIRE') {
     testFiles = [nodeCommonTest, nodeRequireTest];
     excludeFiles.add(nodeScriptSrcTest);
@@ -48,6 +53,12 @@ module.exports = function (config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
+
+    // Custom context and debug files
+    customContextFile: process.env.TEST_TYPE === 'CUSTOM_CONTEXT_FILE' ?
+      __dirname + '/test/integration-test/test-files/custom-context.html' : null,
+    customDebugFile: process.env.TEST_TYPE === 'CUSTOM_CONTEXT_FILE' ?
+      __dirname + '/test/integration-test/test-files/custom-debug.html' : null,
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
