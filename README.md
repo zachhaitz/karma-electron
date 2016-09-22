@@ -5,6 +5,7 @@
 // TODO: Verify `module.id` etc are patched
 // TODO: Support Node.js required files (should be same code but at the end using a `./require`?
 // TODO: Update README with require behavior (might adjust features)
+// TODO: Search for missed TODOs
 
 [Karma][] launcher and preprocessor for [Electron][]
 
