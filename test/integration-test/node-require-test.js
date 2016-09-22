@@ -39,10 +39,12 @@ describe('module for `require` based Node.js integrations', function () {
   describe('in a child module', function () {
     // DEV: Determined exepctations via `../reference`
     it('identify as a standalone module', function () {
+      // Example: /home/todd/github/karma-electron/test/integration-test/test-files/submodule.js
       assert(/test[\/\\]integration-test[\/\\]test-files[\/\\]submodule\.js$/.test(submodule.filename),
         'Expected "' + submodule.filename + '" to end with "test/integration-test/test-files/submodule.js"');
       // Verify `hello` property of `module.exports`
       assert.strictEqual(submodule.exports.hello, 'world');
+      // Example: /home/todd/github/karma-electron/test/integration-test/test-files/submodule.js
       assert(/test[\/\\]integration-test[\/\\]test-files[\/\\]submodule\.js$/.test(submodule.id),
         'Expected "' + submodule.id + '" to end with "test/integration-test/test-files/submodule.js"');
       assert.strictEqual(submodule.loaded, true);
