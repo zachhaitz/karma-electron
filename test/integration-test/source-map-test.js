@@ -8,10 +8,7 @@ describe('A file with a source map loaded with karma-electron', function () {
   before(function retrieveHttpFile (done) {
     // Retrieve karma-electron processed HTTP body
     // DEV: As a sanity check, verify we are in the same file
-    // jscs:disable maximumLineLength
-    // Example `err.stack`: `Error at Context.retrieveHttpFile (/home/todd/github/karma-electron/test/integration-test/source-map-test.js:12:15)`
-    // jscs:enable maximumLineLength
-    assert((new Error()).stack.match(/test\/integration-test\/source-map-test.js/));
+    assert(__filename.match(/source-map-test.js$/));
     var that = this;
     request('http://localhost:9876/base/source-map-test.js', function handleRequest (err, res, body) {
       that.httpBody = body;

@@ -63,7 +63,7 @@ module.exports = function (config) {
     client: {
       // DEV: We use `client` as these options affect the client side of `karma`
       //   Based on https://github.com/karma-runner/karma-mocha/tree/v1.1.1#configuration
-      loadScriptsViaRequire: process.env.TEST_TYPE === 'NODE_REQUIRE',
+      loadScriptsViaRequire: ['NODE_REQUIRE', 'SOURCE_MAP'].indexOf(process.env.TEST_TYPE) !== -1,
       useIframe: false
     },
 
