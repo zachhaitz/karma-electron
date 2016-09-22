@@ -15,7 +15,7 @@ This was written to allow for directly testing in [Electron][] where we might wa
 **Features:**
 
 - Tested via CI on Linux and Windows
-- Support for Node.js integration in the renderer process (e.g. `process`, `require`, `__filename`)
+- Support for Node.js integration in the renderer process (e.g. `node_modules`, `__filename`, relative paths for `require`)
 - Support for hidden browser windows
 - Support for isolated test runs to prevent cookie/localStorage pollution
 
@@ -31,6 +31,16 @@ This was written to allow for directly testing in [Electron][] where we might wa
     - For testing a full application, see `electron's` documentation on Selenium and WebDriver
     - https://github.com/electron/electron/blob/v1.3.6/docs/tutorial/using-selenium-and-webdriver.md
 
+## Breaking changes in 5.0.0
+We have corrected inaccuracies with `file://` behavior from Electron. For example:
+
+- `__filename` is now Karma's `context.html`
+- Relative paths for `require` resolve from Karma's `context.html` directory
+
+We have transferred support for this to the option `client.loadScriptsViaRequire` which loads scripts via `require` and has the original expected Node.js behavior
+
+For more information, see https://github.com/twolfson/karma-electron/issues/11
+
 ## Getting Started
 On a project that has been set up with `karma init` already, install the module via:
 
@@ -45,7 +55,7 @@ Then, configure the module:
 // Inside `karma.conf.js`
 browsers: ['Electron']
 
-// If you would like Node integration support (e.g. `require`)
+// If you would like Node.js integration support (e.g. `require`)
 //   then, you must include this in `preprocessors` and `client`
 // DEV: preprocessors is for backfilling `__filename` and local `require` paths
 preprocessors: {
@@ -78,6 +88,10 @@ ELECTRON_BIN=/usr/bin/electron karma start
 ### Configuration
 We support configuration via Karma's custom launcher inheritance:
 
+- client `Object` - Container for configuring child windows loaded from Karma
+    - loadScriptsViaRequire `Boolean` - Load scripts via `require` instead of `<script src=`
+        - This sets `__filename`, `__dirname`, and `module` to match the script instead of Karma's `context.html`
+        - By default, this is `false` and we directly load the original scripts content
 - flags `Array` - List of Chromium flags to alter Electron's behavior
     - https://github.com/atom/electron/blob/v0.36.9/docs/api/chrome-command-line-switches.md
     - We added support for a `--show` to allow making the Karma window visible
@@ -91,6 +105,11 @@ module.exports = function (config) {
   config.set({
     // Specify usage of our custom launcher
     browsers: ['CustomElectron'],
+
+    // Use `require` instead of `<script src=` to load scripts
+    client: {
+      loadScriptsViaRequire: true
+    },
 
     // Define a custom launcher which inherits from `Electron`
     customLaunchers: {
