@@ -2,6 +2,21 @@
 var assert = require('assert');
 
 // Start our tests
+// DEV: To test custom debug file, append the following config and add an error in test
+//   (e.g. `throw new Error('Debug test');`)
+//   Then, run our standalone script: `npm run test-karma-custom-context-file`
+/*
+config.set({
+  browserNoActivityTimeout: 60 * 60 * 1000, // 1 hour
+  browsers: ['CustomElectron'],
+  customLaunchers: {
+    CustomElectron: {
+      base: 'Electron',
+      flags: ['--show']
+    }
+  }
+});
+*/
 describe('A karma configuration using a custom context file', function () {
   // DEV: Determined exepctations via `../reference`
   it('has the custom context file as its filename and dirname', function () {
