@@ -1,6 +1,5 @@
 # karma-electron [![Build status](https://travis-ci.org/twolfson/karma-electron.svg?branch=master)](https://travis-ci.org/twolfson/karma-electron) [![Build status](https://ci.appveyor.com/api/projects/status/urgpvcip7kl9q2ih/branch/master?svg=true)](https://ci.appveyor.com/project/twolfson/karma-electron-launcher/branch/master)
 
-// TODO: Support customContextFile (should be as simple as using `config.customContextFile`)
 // TODO: Test customContextFile
 // TODO: Manually verify (and document manual testing) for customDebugFile
 // TODO: Update README with require behavior (might adjust features section)
