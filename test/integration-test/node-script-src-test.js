@@ -24,7 +24,7 @@ describe('All `<script src=` Node.js integrations', function () {
   });
 });
 
-describe('module for `<script src=`', function () {
+describe('module for `<script src=` based Node.js integrations', function () {
   describe('in the top level', function () {
     // DEV: Determined exepctations via `../reference`
     it('identify as the page itself', function () {

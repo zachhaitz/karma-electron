@@ -4,16 +4,16 @@ var assert = require('assert');
 // DEV: By using a `node_modules` require here, we have verified that we support external requires
 void require('js-string-escape');
 // DEV: By using a `./` require here, we have verified that we support relative requires
-var submodule = null;
-// var submodule = require('./test-files/submodule');
-
-// TODO: Restore `submodule` reference and `describe.skip`
+var submodule = require('./test-files/submodule');
 
 // Start our tests
-describe.skip('All node integrations', function () {
+describe('All `require` based Node.js integrations', function () {
   it('exist as expected', function () {
     assert(require);
     assert(module);
+  });
+
+  it('function as expected', function () {
     // Example: /home/todd/github/karma-electron/test/integration-test/node-test.js
     assert(/test[\/\\]integration-test[\/\\]node-test\.js$/.test(__filename),
       'Expected "' + __filename + '" to end with "test/integration-test/node-test.js"');
@@ -27,7 +27,7 @@ describe.skip('All node integrations', function () {
   });
 });
 
-describe.skip('module', function () {
+describe('module for `require` based Node.js integrations', function () {
   describe('in the top level', function () {
     // DEV: Determined exepctations via `../reference`
     it('identify as the page itself', function () {
@@ -69,40 +69,5 @@ describe.skip('module', function () {
     it('has same window context as parent', function () {
       assert.strictEqual(submodule.before, window.before);
     });
-  });
-});
-
-describe('setImmediate', function () {
-  it('runs before `setTimeout`', function (done) {
-    // Set up a setImmediate
-    var setImmediateRan = false;
-    setImmediate(function handleSetImmediate () {
-      setImmediateRan = true;
-    });
-
-    // Set up a setTimeout to assert and callback
-    setTimeout(function handleSetTimeout () {
-      assert.strictEqual(setImmediateRan, true);
-      done();
-    }, 100);
-  });
-});
-
-describe('clearImmediate', function () {
-  it('clears an existing `setImmediate`', function (done) {
-    // Set up a setImmediate
-    var setImmediateRan = false;
-    var setImmediateId = setImmediate(function handleSetImmediate () {
-      setImmediateRan = true;
-    });
-
-    // Set up a setTimeout to assert and callback
-    setTimeout(function handleSetTimeout () {
-      assert.strictEqual(setImmediateRan, false);
-      done();
-    }, 100);
-
-    // Clear our setImmediate
-    clearImmediate(setImmediateId);
   });
 });
