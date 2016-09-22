@@ -56,9 +56,9 @@ module.exports = function (config) {
 
     // Custom context and debug files
     customContextFile: process.env.TEST_TYPE === 'CUSTOM_CONTEXT_FILE' ?
-      __dirname + '/test/integration-test/test-files/custom-context.html' : null,
+      __dirname + '/test-files/custom-context.html' : null,
     customDebugFile: process.env.TEST_TYPE === 'CUSTOM_CONTEXT_FILE' ?
-      __dirname + '/test/integration-test/test-files/custom-debug.html' : null,
+      __dirname + '/test-files/custom-debug.html' : null,
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter

@@ -10,9 +10,9 @@ describe('A karma configuration using a custom context file', function () {
       'Expected "' + __filename + '" to end with "test/integration-test/test-files/custom-context.html"');
     // Example: /home/todd/github/karma-electron/test/integration-test/test-files
     assert(/test[\/\\]integration-test[\/\\]test-files$/.test(__dirname),
-      'Expected "' + __dirname + '" to end with "test/integration-test/test-files/custom-context.html"');
+      'Expected "' + __dirname + '" to end with "test/integration-test/test-files"');
     // Example: /home/todd/github/karma-electron/test/integration-test/test-files/custom-context.html
-    assert(/test[\/\\]integration-test[\/\\]test-files$/.test(module.filename),
+    assert(/test[\/\\]integration-test[\/\\]test-files[\/\\]custom-context\.html$/.test(module.filename),
       'Expected "' + module.filename + '" to end with "test/integration-test/test-files/custom-context.html"');
     assert.strictEqual(module.id, '.');
   });
