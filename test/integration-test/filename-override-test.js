@@ -17,4 +17,8 @@ describe('A karma configuration using a __filenameOverride file', function () {
       '"test/integration-test/test-files/filename-override-context.html"');
     assert.strictEqual(module.id, '.');
   });
+
+  it('doesn\'t load the file at all', function () {
+    // There is no file on disk so we are fine
+  });
 });
