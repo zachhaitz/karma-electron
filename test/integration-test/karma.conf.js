@@ -14,9 +14,10 @@ module.exports = function (config) {
   var nodeRequireTest = 'node-require-test.js';
   var nodeScriptSrcTest = 'node-script-src-test.js';
   var customContextFileTest = 'custom-context-file-test.js';
+  var filenameOverrideTest = 'filename-override-test.js';
   var testFiles = ['*-test.js'];
   var excludeFiles = new Set([
-    customContextFileTest, failureTest, karmaTest,
+    customContextFileTest, failureTest, filenameOverrideTest, karmaTest,
     nodeRequireTest, phantomJsTest, sourceMapTest, uncaughtExceptionTest]);
 
   // If we are testing uncaught exceptions, then update our tests
@@ -41,6 +42,9 @@ module.exports = function (config) {
   } else if (process.env.TEST_TYPE === 'CUSTOM_CONTEXT_FILE') {
     testFiles = [customContextFileTest];
     excludeFiles.delete(customContextFileTest);
+  } else if (process.env.TEST_TYPE === 'FILENAME_OVERRIDE') {
+    testFiles = [filenameOverrideTest];
+    excludeFiles.delete(filenameOverrideTest);
   } else if (process.env.TEST_TYPE === 'NODE_REQUIRE') {
     testFiles = [nodeCommonTest, nodeRequireTest];
     excludeFiles.add(nodeScriptSrcTest);
@@ -74,6 +78,8 @@ module.exports = function (config) {
     client: {
       // DEV: We use `client` as these options affect the client side of `karma`
       //   Based on https://github.com/karma-runner/karma-mocha/tree/v1.1.1#configuration
+      __filenameOverride: process.env.TEST_TYPE === 'FILENAME_OVERRIDE' ?
+        __dirname + '/test-files/filename-override-context.html' : null,
       loadScriptsViaRequire: process.env.TEST_TYPE === 'NODE_REQUIRE',
       useIframe: false
     },
