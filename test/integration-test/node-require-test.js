@@ -8,11 +8,6 @@ var submodule = require('./test-files/submodule');
 
 // Start our tests
 describe('All `require` based Node.js integrations', function () {
-  it('exist as expected', function () {
-    assert(require);
-    assert(module);
-  });
-
   it('function as expected', function () {
     // Example: /home/todd/github/karma-electron/test/integration-test/node-test.js
     assert(/test[\/\\]integration-test[\/\\]node-test\.js$/.test(__filename),
@@ -20,10 +15,6 @@ describe('All `require` based Node.js integrations', function () {
     // Example: /home/todd/github/karma-electron/test/integration-test
     assert(/test[\/\\]integration-test$/.test(__dirname),
       'Expected "' + __dirname + '" to end with "test/integration-test"');
-    assert(process);
-    assert(setImmediate);
-    assert(clearImmediate);
-    assert.strictEqual(global, window);
   });
 });
 

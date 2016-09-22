@@ -9,11 +9,6 @@ var submodule = require('../../../test/integration-test/test-files/submodule');
 
 // Start our tests
 describe('All `<script src=` Node.js integrations', function () {
-  it('exist as expected', function () {
-    assert(require);
-    assert(module);
-  });
-
   it('function as expected', function () {
     // Example: /home/todd/github/karma-electron/node_modules/karma/static/context.html
     assert(/karma[\/\\]static[\/\\]context\.html$/.test(__filename),
