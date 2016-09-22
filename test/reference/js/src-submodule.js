@@ -6,5 +6,5 @@ console.log('src-submodule: module.id', module.id);
   // /home/todd/github/karma-electron/test/reference/js/src-submodule.js
 console.log('src-submodule: module.loaded', module.loaded); // false
 console.log('src-submodule: module.parent', module.parent);
-  // {children: Array[8], exports: {}, filename: /home/todd/github/karma-electron/test/reference/index.html,
+  // {children: Array[9], exports: {}, filename: /home/todd/github/karma-electron/test/reference/index.html,
   //    id: ., loaded: true, parent: null, paths: Array[6]}
