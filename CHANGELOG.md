@@ -1,4 +1,6 @@
 # karma-electron changelog
+4.1.2 - Added reference application for default `electron` behavior
+
 4.1.1 - Added requirements and notices to README. Fixes #13
 
 4.1.0 - Added loading of `electron` package due to `electron-prebuilt` deprecation via @MLefebvreICO in #10
