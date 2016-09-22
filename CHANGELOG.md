@@ -1,4 +1,6 @@
 # karma-electron changelog
+5.0.0 - Corrected `__filename`/`__dirname`/`module` inaccuracies between `karma-electron` and standalone Electron
+
 4.1.3 - Upgraded to `jscs@3.0.7` and `jshint@2.9.3` to resolve lint errors
 
 4.1.2 - Added reference application for default `electron` behavior
