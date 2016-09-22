@@ -1,4 +1,8 @@
 // Log information about our module
+console.log('src-submodule: __filename', __filename);
+  // /home/todd/github/karma-electron/test/reference/js/src-submodule.js
+console.log('src-submodule: __dirname', __dirname);
+  // /home/todd/github/karma-electron/test/reference/js
 console.log('src-submodule: module.filename', module.filename);
   // /home/todd/github/karma-electron/test/reference/js/src-submodule.js
 console.log('src-submodule: module.exports', module.exports); // {}

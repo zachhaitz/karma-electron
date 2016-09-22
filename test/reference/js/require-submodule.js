@@ -1,4 +1,8 @@
 // Log information about our module
+console.log('require-submodule: __filename', __filename);
+  // /home/todd/github/karma-electron/test/reference/js/require-submodule.js
+console.log('require-submodule: __dirname', __dirname);
+  // /home/todd/github/karma-electron/test/reference/js
 console.log('require-submodule: module.filename', module.filename);
   // /home/todd/github/karma-electron/test/reference/js/require-submodule.js
 console.log('require-submodule: module.exports', module.exports); // {}

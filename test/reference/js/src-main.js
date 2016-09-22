@@ -1,4 +1,8 @@
 // Log information about our module
+console.log('src-main: __filename', __filename);
+  // /home/todd/github/karma-electron/test/reference/index.html
+console.log('src-main: __dirname', __dirname);
+  // /home/todd/github/karma-electron/test/reference
 console.log('src-main: module.filename', module.filename);
   // /home/todd/github/karma-electron/test/reference/index.html
 console.log('src-main: module.exports', module.exports); // {}
