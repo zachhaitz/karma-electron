@@ -4,6 +4,7 @@ var assert = require('assert');
 // Start our tests
 // DEV: To test custom debug file, append the following config and `console.log's`
 //   Then, run our standalone script: `TEST_TYPE=CUSTOM_CONTEXT_FILE npm run test-karma-continuous`
+//   Then, click on "DEBUG" in the Electron window and view its console
 /*
 // Append to config
 config.set({
