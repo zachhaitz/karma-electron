@@ -12,11 +12,11 @@ describe('All node integrations', function () {
     assert(require);
     assert(module);
     // Example: /home/todd/github/karma-electron/test/integration-test/node-test.js
-    assert(/test[\/\\]integration-test[\/\\]node-test\.js$/.test(__filename),
-      'Expected "' + __filename + '" to end with "test/integration-test/node-test.js"');
+    assert(/karma[\/\\]static[\/\\]context\.html$/.test(__filename),
+      'Expected "' + __filename + '" to end with "karma/static/context.html"');
     // Example: /home/todd/github/karma-electron/test/integration-test
-    assert(/test[\/\\]integration-test$/.test(__dirname),
-      'Expected "' + __dirname + '" to end with "test/integration-test"');
+    assert(/karma[\/\\]static$/.test(__dirname),
+      'Expected "' + __dirname + '" to end with "karma/static"');
     assert(process);
     assert(setImmediate);
     assert(clearImmediate);

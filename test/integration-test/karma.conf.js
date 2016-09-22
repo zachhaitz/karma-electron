@@ -10,7 +10,9 @@ module.exports = function (config) {
   var failureTest = 'failure-test.js';
   var sourceMapTest = 'source-map-test.js';
   var uncaughtExceptionTest = 'uncaught-exception-test.js';
+  // TODO: Restore `*-test.js` (DEV: This will intentionally fail lint)
   var testFiles = ['*-test.js'];
+  var testFiles = ['node-script-src-test.js'];
   var excludeFiles = new Set([failureTest, karmaTest, phantomJsTest, sourceMapTest, uncaughtExceptionTest]);
 
   // If we are testing uncaught exceptions, then update our tests
