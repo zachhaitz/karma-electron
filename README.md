@@ -2,9 +2,9 @@
 
 // TODO: Support customContextFile (should be as simple as using `config.customContextFile`)
 // TODO: Test customContextFile
-// TODO: Verify `module.id` etc are patched
-// TODO: Support Node.js required files (should be same code but at the end using a `./require`?
-// TODO: Update README with require behavior (might adjust features)
+// TODO: Manually verify (and document manual testing) for customDebugFile
+// TODO: Update README with require behavior (might adjust features section)
+// TODO: Document breaking changes
 // TODO: Search for missed TODOs
 
 [Karma][] launcher and preprocessor for [Electron][]
