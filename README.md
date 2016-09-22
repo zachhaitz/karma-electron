@@ -4,6 +4,7 @@
 // TODO: Manually verify (and document manual testing) for customDebugFile
 // TODO: Update README with require behavior (might adjust features section)
 // TODO: Document breaking changes
+// TODO: Verify example from issue is resolved
 // TODO: Search for missed TODOs
 
 [Karma][] launcher and preprocessor for [Electron][]
