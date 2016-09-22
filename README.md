@@ -123,7 +123,6 @@ module.exports = function (config) {
     // Specify usage of our custom launcher
     browsers: ['CustomElectron'],
 
-
     // Define a custom launcher which inherits from `Electron`
     customLaunchers: {
       CustomElectron: {
