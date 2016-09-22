@@ -7,7 +7,7 @@ describe('A karma configuration using a __filenameOverride file', function () {
   it('uses the __filenameOverride for its filename and dirname', function () {
     // Example: /home/todd/github/karma-electron/test/integration-test/test-files/filename-override-context.html
     assert(/test[\/\\]integration-test[\/\\]test-files[\/\\]filename-override-context\.html$/.test(__filename),
-      'Expected "' + __filename + '" to end with "test/integration-test/test-files/custom-context.html"');
+      'Expected "' + __filename + '" to end with "test/integration-test/test-files/filename-override-context.html"');
     // Example: /home/todd/github/karma-electron/test/integration-test/test-files
     assert(/test[\/\\]integration-test[\/\\]test-files$/.test(__dirname),
       'Expected "' + __dirname + '" to end with "test/integration-test/test-files"');
