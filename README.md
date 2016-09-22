@@ -85,13 +85,30 @@ karma start
 ELECTRON_BIN=/usr/bin/electron karma start
 ```
 
-### Configuration
-We support configuration via Karma's custom launcher inheritance:
+### Script configuration
+We support the following configurations:
 
 - client `Object` - Container for configuring child windows loaded from Karma
     - loadScriptsViaRequire `Boolean` - Load scripts via `require` instead of `<script src=`
         - This sets `__filename`, `__dirname`, and `module` to match the script instead of Karma's `context.html`
         - By default, this is `false` and we directly load the original scripts content
+
+**Example:**
+
+```js
+module.exports = function (config) {
+  config.set({
+    // Use `require` instead of `<script src=` to load scripts
+    client: {
+      loadScriptsViaRequire: true
+    }
+  });
+};
+```
+
+### Launcher configuration
+We support configuration via Karma's custom launcher inheritance:
+
 - flags `Array` - List of Chromium flags to alter Electron's behavior
     - https://github.com/atom/electron/blob/v0.36.9/docs/api/chrome-command-line-switches.md
     - We added support for a `--show` to allow making the Karma window visible
@@ -106,10 +123,6 @@ module.exports = function (config) {
     // Specify usage of our custom launcher
     browsers: ['CustomElectron'],
 
-    // Use `require` instead of `<script src=` to load scripts
-    client: {
-      loadScriptsViaRequire: true
-    },
 
     // Define a custom launcher which inherits from `Electron`
     customLaunchers: {
