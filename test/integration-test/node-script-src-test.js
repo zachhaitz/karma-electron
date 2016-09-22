@@ -12,10 +12,10 @@ describe('All node integrations', function () {
   it('exist as expected', function () {
     assert(require);
     assert(module);
-    // Example: /home/todd/github/karma-electron/test/integration-test/node-test.js
+    // Example: /home/todd/github/karma-electron/node_modules/karma/static/context.html
     assert(/karma[\/\\]static[\/\\]context\.html$/.test(__filename),
       'Expected "' + __filename + '" to end with "karma/static/context.html"');
-    // Example: /home/todd/github/karma-electron/test/integration-test
+    // Example: /home/todd/github/karma-electron/node_modules/karma/static
     assert(/karma[\/\\]static$/.test(__dirname),
       'Expected "' + __dirname + '" to end with "karma/static"');
     assert(process);
@@ -29,12 +29,9 @@ describe('module', function () {
   describe('in the top level', function () {
     // DEV: Determined exepctations via `../reference`
     it('identify as the page itself', function () {
-      // jscs:disable maximumLineLength
-      // DEV: `module.filename` should be something like
-      //   /home/todd/github/karma-electron/node_modules/electron-prebuilt/dist/resources/atom.asar/renderer/lib/init.js
-      //   since the page is HTTP, not a `file://`
-      // jscs:enable maximumLineLength
-      assert(module.filename);
+      // Example: /home/todd/github/karma-electron/node_modules/karma/static/context.html
+      assert(/karma[\/\\]static[\/\\]context\.html$/.test(module.filename),
+        'Expected "' + module.filename + '" to end with "karma/static/context.html"');
       assert.strictEqual(typeof module.exports, 'object');
       assert.strictEqual(module.id, '.');
       assert.strictEqual(submodule.loaded, true);
