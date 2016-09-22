@@ -4,13 +4,10 @@ var assert = require('assert');
 // DEV: By using a `node_modules` require here, we have verified that we support external requires
 void require('js-string-escape');
 // DEV: By using a `./` require here, we have verified that we support relative requires
-var submodule = null;
-// var submodule = require('./test-files/submodule');
-
-// TODO: Restore `submodule` reference and `describe.skip`
+var submodule = require('./test-files/submodule');
 
 // Start our tests
-describe.skip('All node integrations', function () {
+describe('All node integrations', function () {
   it('exist as expected', function () {
     assert(require);
     assert(module);
@@ -27,7 +24,7 @@ describe.skip('All node integrations', function () {
   });
 });
 
-describe.skip('module', function () {
+describe('module', function () {
   describe('in the top level', function () {
     // DEV: Determined exepctations via `../reference`
     it('identify as the page itself', function () {
