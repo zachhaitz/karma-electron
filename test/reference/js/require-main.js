@@ -1,5 +1,5 @@
 // Log information about our module
-// DEV: For reference, this is identical to `src-submodule.js`
+// DEV: For reference, this is identical to `script-src-submodule.js`
 console.log('require-main: __filename', __filename);
   // /home/todd/github/karma-electron/test/reference/js/require-main.js
 console.log('require-main: __dirname', __dirname);
