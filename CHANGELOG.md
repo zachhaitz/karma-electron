@@ -1,4 +1,6 @@
 # karma-electron changelog
+5.1.1 - Updated instructions to use `electron` not `electron-prebuilt` via @MLefebvreICO in #15
+
 5.1.0 - Added support for `__filenameOverride`. Fixes #11
 
 5.0.0 - Corrected `__filename`/`__dirname`/`module` inaccuracies between `karma-electron` and standalone Electron
