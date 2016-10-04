@@ -40,8 +40,8 @@ For more information, see https://github.com/twolfson/karma-electron/issues/11
 On a project that has been set up with `karma init` already, install the module via:
 
 ```bash
-# Install our module and `electron-prebuilt`
-npm install karma-electron electron-prebuilt
+# Install our module and `electron`
+npm install karma-electron electron
 ```
 
 Then, configure the module:
@@ -72,7 +72,7 @@ karma start
 ## Documentation
 ### Environment variables
 - ELECTRON_BIN - Override path to use for `electron`
-    - By default, we will use path given by `electron-prebuilt`
+    - By default, we will use path given by `electron`
 
 **Example:**
 
