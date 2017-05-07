@@ -1,18 +1,17 @@
 // Karma configuration
 // Generated on Thu Mar 03 2016 19:57:50 GMT-0600 (CST)
 var Set = require('collections/set');
-var path = require('path');
 
 module.exports = function (config) {
   // Set up default files to test against
   var karmaTest = 'karma-test.js';
   var successTest = 'success-test.js';
   var phantomJsTest = 'phantomjs-test.js';
-  var mainEntryFileTest = 'main-entry-file-test.js';
   var eofCommentTest = 'eof-comment-test.js';
   var failureTest = 'failure-test.js';
   var sourceMapTest = 'source-map-test.js';
   var uncaughtExceptionTest = 'uncaught-exception-test.js';
+  var mainRequireTest = 'main-require-test.js';
   var nodeCommonTest = 'node-common-test.js';
   var nodeRequireTest = 'node-require-test.js';
   var nodeScriptSrcTest = 'node-script-src-test.js';
@@ -22,7 +21,7 @@ module.exports = function (config) {
   var excludeFiles = new Set([
     customContextFileTest, failureTest, filenameOverrideTest, karmaTest,
     nodeRequireTest, phantomJsTest, sourceMapTest, uncaughtExceptionTest,
-    mainEntryFileTest]);
+    mainRequireTest]);
 
   // If we are testing uncaught exceptions, then update our tests
   if (process.env.TEST_TYPE === 'UNCAUGHT_EXCEPTION') {
@@ -49,9 +48,9 @@ module.exports = function (config) {
   } else if (process.env.TEST_TYPE === 'FILENAME_OVERRIDE') {
     testFiles = [filenameOverrideTest];
     excludeFiles.delete(filenameOverrideTest);
-  } else if (process.env.TEST_TYPE === 'MAIN_ENTRY_FILE') {
-    testFiles = [mainEntryFileTest];
-    excludeFiles.delete(mainEntryFileTest);
+  } else if (process.env.TEST_TYPE === 'MAIN_REQUIRE') {
+    testFiles = [mainRequireTest];
+    excludeFiles.delete(mainRequireTest);
   } else if (process.env.TEST_TYPE === 'NODE_REQUIRE') {
     testFiles = [nodeCommonTest, nodeRequireTest];
     excludeFiles.add(nodeScriptSrcTest);
@@ -65,15 +64,15 @@ module.exports = function (config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-    // Custom context and debug files
+    // Custom context/debug files and launchers
     customContextFile: process.env.TEST_TYPE === 'CUSTOM_CONTEXT_FILE' ?
       __dirname + '/test-files/custom-context.html' : null,
     customDebugFile: process.env.TEST_TYPE === 'CUSTOM_CONTEXT_FILE' ?
       __dirname + '/test-files/custom-debug.html' : null,
     customLaunchers: {
-      ElectronWithEntry: {
+      ElectronMainRequire: {
         base: 'Electron',
-        entry: path.resolve(__dirname, 'test-files/main-entry.js')
+        require: __dirname + '/test-files/main-require.js'
       }
     },
     // frameworks to use
