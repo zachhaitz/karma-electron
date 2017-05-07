@@ -1,4 +1,6 @@
 # karma-electron changelog
+5.2.0 - Added support for `require` in main via @amireh in #23. Fixes #24
+
 5.1.1 - Updated instructions to use `electron` not `electron-prebuilt` via @MLefebvreICO in #15
 
 5.1.0 - Added support for `__filenameOverride`. Fixes #11
