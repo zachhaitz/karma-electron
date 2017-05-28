@@ -1,5 +1,5 @@
 // Log information about our module
-// jscs:disable validateIndentation
+/* eslint-disable no-console */
 console.log('script-src-submodule: __filename', __filename);
   // /home/todd/github/karma-electron/test/reference/js/script-src-submodule.js
 console.log('script-src-submodule: __dirname', __dirname);
@@ -13,4 +13,4 @@ console.log('script-src-submodule: module.loaded', module.loaded); // false
 console.log('script-src-submodule: module.parent', module.parent);
   // {children: Array[9], exports: {}, filename: /home/todd/github/karma-electron/test/reference/index.html,
   //    id: ., loaded: true, parent: null, paths: Array[6]}
-// jscs:enable validateIndentation
+/* eslint-enable no-console */

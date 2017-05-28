@@ -1,6 +1,6 @@
 // Log information about our module
 // DEV: For reference, this is identical to `script-src-submodule.js`
-// jscs:disable validateIndentation
+/* eslint-disable no-console */
 console.log('require-main: __filename', __filename);
   // /home/todd/github/karma-electron/test/reference/js/require-main.js
 console.log('require-main: __dirname', __dirname);
@@ -14,7 +14,7 @@ console.log('require-main: module.loaded', module.loaded); // false
 console.log('require-main: module.parent', module.parent);
   // {children: Array[9], exports: {}, filename: /home/todd/github/karma-electron/test/reference/index.html,
   //    id: ., loaded: true, parent: null, paths: Array[6]}
-// jscs:enable validateIndentation
+/* eslint-enable no-console */
 
 // Load another script via `require`
 void require('./require-submodule.js');

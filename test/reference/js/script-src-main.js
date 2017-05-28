@@ -1,5 +1,5 @@
 // Log information about our module
-// jscs:disable validateIndentation
+/* eslint-disable no-console */
 console.log('script-src-main: __filename', __filename);
   // /home/todd/github/karma-electron/test/reference/index.html
 console.log('script-src-main: __dirname', __dirname);
@@ -10,7 +10,7 @@ console.log('script-src-main: module.exports', module.exports); // {}
 console.log('script-src-main: module.id', module.id); // .
 console.log('script-src-main: module.loaded', module.loaded); // true
 console.log('script-src-main: module.parent', module.parent); // null
-// jscs:enable validateIndentation
+/* eslint-enable no-console */
 
 // Load another script via `require`
 // DEV: Our path begins from perspective of `index.html` due to using `<script src=`

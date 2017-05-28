@@ -35,5 +35,4 @@ describe('A file with a source map loaded with karma-electron', function () {
   });
 });
 // Via https://github.com/thlorenz/convert-source-map
-// jscs:disable
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9vLmpzIiwic291cmNlcyI6WyJjb25zb2xlLmxvZyhcImhpXCIpOyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsInNvdXJjZVJvb3QiOiIvIn0=

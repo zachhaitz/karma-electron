@@ -134,9 +134,9 @@ module.exports = function (config) {
     // Load in our module as a plugin
     // https://github.com/karma-runner/karma-chrome-launcher/blob/v0.2.2/examples/simple/karma.conf.js
     plugins: [
-        require('../../'),
-        'karma-mocha',
-        'karma-phantomjs-launcher'
+      require('../../'),
+      'karma-mocha',
+      'karma-phantomjs-launcher'
     ]
   });
 };

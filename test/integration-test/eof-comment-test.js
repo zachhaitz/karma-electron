@@ -5,5 +5,4 @@ describe('A comment at the EOF with no trailing newline', function () {
     // No tests are necessary, this is a placeholder
   });
 });
-// jscs:disable
 // EOF comment
