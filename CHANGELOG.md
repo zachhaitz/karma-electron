@@ -1,4 +1,6 @@
 # karma-electron changelog
+5.3.0 - Upgraded to electron@1.8.4 to fix GitHub vulnerability warning
+
 5.2.2 - Replaced Gratipay with support me page
 
 5.2.1 - Upgraded to Node.js 4, 6, and 7 for CI
