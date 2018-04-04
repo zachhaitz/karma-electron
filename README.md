@@ -4,8 +4,14 @@
 
 ```
 ./node_modules/.bin/browserify --debug hi.js > hi.browserify.js
+./node_modules/.bin/uglifyjs --compress --source-map --output hi.min.js -- hi.browserify.js
+./node_modules/.bin/browserify --debug hi.browserify.js > hi.browserify2.js
 
+# Browserify
 {"version":3,"sources":["node_modules/browserify/node_modules/browser-pack/_prelude.js","hi.js"],"names":[],"mappings":"AAAA;ACAA;AACA","file":"generated.js","sourceRoot":"","sourcesContent":["(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c=\"function\"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error(\"Cannot find module '\"+i+\"'\");throw a.code=\"MODULE_NOT_FOUND\",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u=\"function\"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()","console.log('hi');\n"]}
+
+# UglifyJS
+{"version":3,"sources":["hi.browserify.js"],"names":["r","e","n","t","o","i","f","c","require","u","a","Error","code","p","exports","call","length","1","module","console","log"],"mappings":"CAAY,SAASA,EAAEC,EAAEC,EAAEC,GAAG,SAASC,EAAEC,EAAEC,GAAG,IAAIJ,EAAEG,GAAG,CAAC,IAAIJ,EAAEI,GAAG,CAAC,IAAIE,EAAE,mBAAmBC,SAASA,QAAQ,IAAIF,GAAGC,EAAE,OAAOA,EAAEF,GAAE,GAAI,GAAGI,EAAE,OAAOA,EAAEJ,GAAE,GAAI,IAAIK,EAAE,IAAIC,MAAM,uBAAuBN,EAAE,KAAK,MAAMK,EAAEE,KAAK,mBAAmBF,EAAE,IAAIG,EAAEX,EAAEG,GAAG,CAACS,QAAQ,IAAIb,EAAEI,GAAG,GAAGU,KAAKF,EAAEC,QAAQ,SAASd,GAAoB,OAAOI,EAAlBH,EAAEI,GAAG,GAAGL,IAAeA,IAAIa,EAAEA,EAAEC,QAAQd,EAAEC,EAAEC,EAAEC,GAAG,OAAOD,EAAEG,GAAGS,QAAQ,IAAI,IAAIL,EAAE,mBAAmBD,SAASA,QAAQH,EAAE,EAAEA,EAAEF,EAAEa,OAAOX,IAAID,EAAED,EAAEE,IAAI,OAAOD,EAA7b,CAA4c,CAACa,EAAE,CAAC,SAAST,QAAQU,OAAOJ,SACxeK,QAAQC,IAAI,OAEV,KAAK,GAAG,CAAC"}
 ```
 
 [Karma][] launcher and preprocessor for [Electron][]
