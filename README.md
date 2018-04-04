@@ -1,5 +1,11 @@
 # karma-electron [![Build status](https://travis-ci.org/twolfson/karma-electron.svg?branch=master)](https://travis-ci.org/twolfson/karma-electron) [![Build status](https://ci.appveyor.com/api/projects/status/urgpvcip7kl9q2ih/branch/master?svg=true)](https://ci.appveyor.com/project/twolfson/karma-electron-launcher/branch/master)
 
+**Test scripts:**
+
+```
+./node_modules/.bin/browserify --debug hi.js > hi.browserify.js
+```
+
 [Karma][] launcher and preprocessor for [Electron][]
 
 This was written to allow for directly testing in [Electron][] where we might want `require` to work automatically
