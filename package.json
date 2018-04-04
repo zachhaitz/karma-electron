@@ -1,7 +1,7 @@
 {
   "name": "karma-electron",
   "description": "Karma launcher and preprocessor for Electron",
-  "version": "5.3.0",
+  "version": "6.0.0",
   "homepage": "https://github.com/twolfson/karma-electron",
   "author": {
     "name": "Todd Wolfson",

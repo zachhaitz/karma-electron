@@ -1,4 +1,6 @@
 # karma-electron changelog
+6.0.0 - Updated source map support to pass through original source map fully
+
 5.3.0 - Upgraded to electron@1.8.4 to fix GitHub vulnerability warning
 
 5.2.2 - Replaced Gratipay with support me page
