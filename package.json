@@ -65,7 +65,8 @@
     "mocha": "~1.11.0",
     "phantomjs-prebuilt": "~2.1.5",
     "request": "~2.72.0",
-    "twolfson-style": "~1.6.0"
+    "twolfson-style": "~1.6.0",
+    "uglify-js": "~3.3.18"
   },
   "keywords": [
     "karma-plugin",
