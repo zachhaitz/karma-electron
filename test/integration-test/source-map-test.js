@@ -22,15 +22,17 @@ describe('A file with a source map loaded with karma-electron', function () {
     var generatedContent = this.httpBody;
     var generatedSourcemap = convertSourceMap.fromComment(generatedContent).toObject();
 
-    // Verify our original contents are in the source map
-    // {version: 3, sources: ['path/to/source-map-test.js', ...], names: [], mappings: 'AAAA;...', file: 'generated.js',
+    // Verify our source map's contents are in the source map
+    // {version: 3, sources: ['/home/todd/.../_node-integration-iframe.mustache.js/path/to/source-map-test.js', ...],
+    //   names: [], mappings: 'AAAA;...', file: 'generated.js',
     //   sourceRoot: '', sourcesContent: ['(function () {...', ...]}
     assert.strictEqual(generatedSourcemap.sources.length, 2);
-    assert(generatedSourcemap.sources[1].endsWith('source-map-test.js'));
+    assert.strictEqual(generatedSourcemap.sources[1], '/src/foo.js');
     assert.strictEqual(generatedSourcemap.sourcesContent.length, 2);
-    assert.notEqual(generatedSourcemap.sourcesContent[1].indexOf('generatedContent'), -1);
+    assert.strictEqual(generatedSourcemap.sourcesContent[1], 'console.log(\'hi\');');
   });
 });
 // Via https://github.com/thlorenz/convert-source-map
 // jscs:disable
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnVpbGQvZm9vLm1pbi5qcyIsInNvdXJjZXMiOlsic3JjL2Zvby5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsInNvdXJjZVJvb3QiOiIvIn0=
+// Generated via:  echo '{"version":3,"file":"build/foo.min.js","sources":["src/foo.js"],"names":[],"mappings":"AAAA","sourceRoot":"/","sourcesContent":["console.log(\"hi\");"]}' | base64
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnVpbGQvZm9vLm1pbi5qcyIsInNvdXJjZXMiOlsic3JjL2Zvby5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsInNvdXJjZVJvb3QiOiIvIiwic291cmNlc0NvbnRlbnQiOlsiY29uc29sZS5sb2coJ2hpJyk7Il19Cg==
