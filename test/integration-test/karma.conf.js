@@ -73,6 +73,10 @@ module.exports = function (config) {
       ElectronMainRequire: {
         base: 'Electron',
         require: __dirname + '/test-files/main-require.js'
+      },
+      VisibleElectron: {
+        base: 'Electron',
+        flags: ['--show']
       }
     },
     // frameworks to use
@@ -121,8 +125,7 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    // browsers: ['Electron'],
-    browsers: ['VisibleElectron'],
+    browsers: ['Electron'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
@@ -131,14 +134,6 @@ module.exports = function (config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity,
-
-    // Define a VisibleElectron launcher
-    customLaunchers: {
-      VisibleElectron: {
-        base: 'Electron',
-        flags: ['--show'],
-      }
-    },
 
     // Load in our module as a plugin
     // https://github.com/karma-runner/karma-chrome-launcher/blob/v0.2.2/examples/simple/karma.conf.js
